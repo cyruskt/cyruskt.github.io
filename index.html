@@ -20,6 +20,7 @@
       --accent: #3c4da1;
       --accent-light: #4e60b8;
       --nav-bg: #fff;
+      --highlight-bg: #fff3a3;
     }
 
     body {
@@ -33,7 +34,6 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ── NAV ── */
     header {
       background: var(--nav-bg);
       border-bottom: 1px solid var(--border);
@@ -72,7 +72,6 @@
     .nav-links a:hover,
     .nav-links a.active { color: var(--text); }
 
-    /* ── SITE WRAP — full width like Kyle's ── */
     .site-wrap {
       max-width: 1200px;
       margin: 0 auto;
@@ -82,7 +81,6 @@
     .page { display: none; }
     .page.active { display: block; }
 
-    /* ── HOME ── */
     .home-layout {
       display: grid;
       grid-template-columns: 300px 1fr;
@@ -90,7 +88,6 @@
       align-items: start;
     }
 
-    /* LEFT */
     .profile-left {
       display: flex;
       flex-direction: column;
@@ -157,7 +154,6 @@
     .social-icon:hover { background: var(--accent-light); text-decoration: none; }
     .social-icon svg { width: 18px; height: 18px; }
 
-    /* RIGHT */
     .bio-heading {
       font-family: 'Roboto', sans-serif;
       font-size: 36px;
@@ -172,6 +168,17 @@
       color: var(--text);
       margin-bottom: 1rem;
     }
+    .bio-indent {
+      display: block;
+      margin-top: 0.35rem;
+      margin-left: 2rem;
+    }
+    .text-highlight {
+      background: var(--highlight-bg);
+      font-weight: 500;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
     .cv-inline-link {
       display: inline-flex;
       align-items: center;
@@ -183,7 +190,6 @@
     .cv-inline-link svg { color: var(--text); }
     .cv-inline-link a { color: var(--accent); }
 
-    /* Interests + Education side by side */
     .interests-edu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -213,7 +219,6 @@
     .edu-degree { font-size: 15px; font-weight: 400; color: var(--text); }
     .edu-school { font-size: 13px; color: var(--muted); display: block; }
 
-    /* ── INNER PAGES ── */
     .inner-wrap { max-width: 860px; }
     h1.page-title {
       font-family: 'Roboto', sans-serif;
@@ -223,7 +228,6 @@
       color: var(--text);
     }
 
-    /* RESEARCH */
     h2.res-section {
       font-size: 18px;
       font-weight: 700;
@@ -243,7 +247,6 @@
     .paper-sub li strong { color: var(--text); font-weight: 500; }
     .paper-abstract { font-size: 14px; line-height: 1.8; color: var(--muted); margin-top: 10px; padding-left: 1rem; border-left: 3px solid var(--border); }
 
-    /* TEACHING */
     .teach-section-title { font-size: 16px; font-weight: 700; margin-bottom: 0.75rem; margin-top: 1.75rem; color: var(--text); }
     .teach-section-title:first-of-type { margin-top: 0; }
     ul.teach-list { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.75rem; }
@@ -251,7 +254,6 @@
     ul.teach-list ul { list-style: circle; padding-left: 1.25rem; margin-top: 4px; }
     ul.teach-list ul li { font-size: 14px; color: var(--muted); }
 
-    /* CV */
     .cv-top-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
     .cv-dl-btn {
       display: inline-flex; align-items: center; gap: 6px;
@@ -268,7 +270,6 @@
     .cv-detail strong { font-weight: 500; }
     .cv-detail .sub { color: var(--muted); font-size: 13px; display: block; }
 
-    /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; max-width: 700px; }
     .contact-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 6px; }
     .contact-val { font-size: 15px; line-height: 1.7; }
@@ -282,11 +283,9 @@
     .form-submit { padding: 9px 24px; background: var(--accent); border: none; border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; color: #fff; transition: background 0.15s; }
     .form-submit:hover { background: var(--accent-light); }
 
-    /* FOOTER */
     footer { text-align: center; padding: 2rem; font-size: 13px; color: var(--light); border-top: 1px solid var(--border); margin-top: 2rem; }
     footer a { color: var(--light); }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .home-layout { grid-template-columns: 1fr; gap: 2rem; }
       .profile-left { margin-bottom: 0; }
@@ -296,6 +295,7 @@
       nav { padding: 0 1rem; }
       .nav-links a { padding: 0 10px; font-size: 13px; }
       .site-wrap { padding: 2rem 1.25rem 3rem; }
+      .bio-indent { margin-left: 1.25rem; }
     }
   </style>
 </head>
@@ -305,7 +305,7 @@
   <nav>
     <a class="nav-name" href="#" onclick="showPage('home'); return false;">Cyrus Khalvati</a>
     <ul class="nav-links">
-      <li><a href="#" id="link-home" class="active" onclick="showPage('home'); return false;">Research</a></li>
+      <li><a href="#" id="link-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
       <li><a href="#" id="link-research" onclick="showPage('research'); return false;">Research</a></li>
       <li><a href="#" id="link-teaching" onclick="showPage('teaching'); return false;">Teaching</a></li>
       <li><a href="#" id="link-cv" onclick="showPage('cv'); return false;">CV</a></li>
@@ -316,14 +316,11 @@
 
 <div class="site-wrap">
 
-  <!-- HOME -->
   <section id="page-home" class="page active">
     <div class="home-layout">
 
-      <!-- LEFT -->
       <div class="profile-left">
         <div class="avatar-circle">
-          <!-- Replace with: <img src="photo.jpg" alt="Cyrus Khalvati"> -->
           Your photo here
         </div>
         <p class="profile-name">Cyrus Khalvati</p>
@@ -331,37 +328,37 @@
         <p class="profile-uni">University of Missouri</p>
 
         <div class="social-row">
-          <!-- LinkedIn -->
           <a class="social-icon" href="#" title="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <!-- SSRN -->
           <a class="social-icon" href="#" title="SSRN" style="font-size:12px;font-weight:700;letter-spacing:-0.5px;">SSRN</a>
-          <!-- Google Scholar -->
           <a class="social-icon" href="#" title="Google Scholar">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </a>
-          <!-- Email -->
           <a class="social-icon" href="mailto:janedoe@university.edu" title="Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- RIGHT -->
       <div>
         <h1 class="bio-heading">Biography</h1>
         <p class="bio-text">Hi! My name is Cyrus, I am a Ph.D. candidate in Management at the <a href="#">Trulaske College of Business</a> at the <a href="#">University of Missouri</a>.</p>
-        <p class="bio-text">My research examines how the design of human resource practices both predicts and shapes performance outcomes at employee and firm levels. My work has been invited for revision at the Journal of Applied Psychology and Personnel Psychology.</p>
-        <p class="bio-text">I completed my undergraduate studies in Vancouver, Canada, where I was born and raised. I am eligible for the TN Visa for employment in the U.S. and
-do not require an H1-B visa.</p>
+
+        <p class="bio-text">
+          My research examines how the design of human resource practices both predicts and shapes performance outcomes at employee and firm levels.
+          <span class="bio-indent">My work has been invited for revision at the Journal of Applied Psychology and Personnel Psychology.</span>
+        </p>
+
+        <p class="bio-text">I completed my undergraduate studies in Vancouver, Canada, where I was born and raised. I am eligible for the TN Visa for employment in the U.S. and <span class="text-highlight">do not</span> require an H1-B visa.</p>
+
         <p class="bio-text">Outside of research and teaching, I enjoy playing basketball, watching professional Esports, and spending time with friends and family.</p>
+
         <p class="cv-inline-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4"/><path d="M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
           Download my <a href="cv.pdf">CV</a>
         </p>
 
-        <!-- Interests + Education side by side -->
         <div class="interests-edu-grid">
           <div>
             <p class="sub-section-title">Interests</p>
@@ -404,7 +401,6 @@ do not require an H1-B visa.</p>
     </div>
   </section>
 
-  <!-- RESEARCH -->
   <section id="page-research" class="page">
     <div class="inner-wrap">
       <h1 class="page-title">Research</h1>
@@ -470,7 +466,6 @@ do not require an H1-B visa.</p>
     </div>
   </section>
 
-  <!-- TEACHING -->
   <section id="page-teaching" class="page">
     <div class="inner-wrap">
       <h1 class="page-title">Teaching</h1>
@@ -495,7 +490,6 @@ do not require an H1-B visa.</p>
     </div>
   </section>
 
-  <!-- CV -->
   <section id="page-cv" class="page">
     <div class="inner-wrap">
       <div class="cv-top-row">
@@ -543,7 +537,6 @@ do not require an H1-B visa.</p>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="page-contact" class="page">
     <div class="inner-wrap">
       <h1 class="page-title">Contact</h1>
