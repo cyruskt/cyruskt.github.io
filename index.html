@@ -31,7 +31,6 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* NAV */
     header {
       background: #fff;
       border-bottom: 1px solid var(--nav-border);
@@ -48,37 +47,19 @@
       justify-content: space-between;
       height: 60px;
     }
-    .nav-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-    }
+    .nav-name { font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none; }
     .nav-links { list-style: none; display: flex; }
     .nav-links a {
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 0 14px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      transition: color 0.15s;
+      font-size: 15px; font-weight: 400; color: var(--muted);
+      text-decoration: none; padding: 0 14px; height: 60px;
+      display: flex; align-items: center; transition: color 0.15s;
     }
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--text); }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
 
-    /* PAGE WRAPPER */
-    .site-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem 6rem;
-    }
+    .site-wrap { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem 6rem; }
     .page { display: none; }
     .page.active { display: block; }
 
-    /* HOME */
     .home-layout {
       display: grid;
       grid-template-columns: 320px 1fr;
@@ -86,143 +67,52 @@
       align-items: start;
     }
 
-    /* LEFT */
-    .profile-left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+    .profile-left { display: flex; flex-direction: column; align-items: center; text-align: center; }
     .avatar-circle {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: #cdd5ea;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: var(--light);
-      margin-bottom: 1.5rem;
-      flex-shrink: 0;
+      width: 300px; height: 300px; border-radius: 50%; overflow: hidden;
+      background: #cdd5ea; display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--light); margin-bottom: 1.5rem; flex-shrink: 0;
     }
     .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
+    .profile-name { font-size: 30px; font-weight: 300; color: var(--text); margin-bottom: 6px; line-height: 1.25; }
+    .profile-role { font-size: 17px; font-weight: 400; color: var(--muted); margin-bottom: 3px; }
+    .profile-uni { font-size: 17px; font-weight: 400; color: var(--accent); margin-bottom: 1.4rem; }
 
-    .profile-name {
-      font-size: 30px;
-      font-weight: 300;
-      color: var(--text);
-      margin-bottom: 6px;
-      line-height: 1.25;
-    }
-    .profile-role {
-      font-size: 17px;
-      font-weight: 400;
-      color: var(--muted);
-      margin-bottom: 3px;
-    }
-    .profile-uni {
-      font-size: 17px;
-      font-weight: 400;
-      color: var(--accent);
-      margin-bottom: 1.4rem;
-    }
-
-    /* Social icons */
-    .social-row {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+    .social-row { display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; }
     .social-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 5px;
-      color: #fff;
-      text-decoration: none;
-      transition: opacity 0.15s;
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 5px; color: #fff;
+      text-decoration: none; transition: opacity 0.15s; flex-shrink: 0;
     }
     .social-icon:hover { opacity: 0.82; text-decoration: none; }
-    .social-icon.linkedin  { background: #0077b5; }
-    .social-icon.ssrn      { background: #154360; font-size: 11px; font-weight: 700; letter-spacing: -0.3px; }
-    .social-icon.scholar   { background: #4285f4; }
-    .social-icon.email     { background: #5f6368; }
-    .social-icon.orcid     { background: #a6ce39; }
+    .social-icon.linkedin { background: #0077b5; }
+    .social-icon.scholar  { background: #4285f4; }
+    .social-icon.email    { background: #5f6368; }
+    .social-icon.orcid    { background: #a6ce39; }
     .social-icon svg { width: 19px; height: 19px; }
 
-    /* RIGHT */
-    .bio-heading {
-      font-size: 44px;
-      font-weight: 300;
-      color: var(--text);
-      margin-bottom: 1.25rem;
-      line-height: 1.15;
-    }
-    .bio-text {
-      font-size: 19px;
-      line-height: 1.8;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-    .cv-inline-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 19px;
-    }
+    .bio-heading { font-size: 44px; font-weight: 300; color: var(--text); margin-bottom: 1.25rem; line-height: 1.15; }
+    .bio-text { font-size: 19px; line-height: 1.8; color: var(--text); margin-bottom: 1rem; }
+    .cv-inline-link { display: inline-flex; align-items: center; gap: 7px; font-size: 19px; color: var(--text); margin-top: 0.5rem; }
     .cv-inline-link a { color: var(--accent); }
 
-    /* Interests + Education */
-    .interests-edu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      margin-top: 2.5rem;
-    }
-    .sub-section-title {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.75rem;
-    }
+    .interests-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2.5rem; }
+    .sub-section-title { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
     .dot-list { list-style: disc; padding-left: 1.4rem; }
     .dot-list li { font-size: 17px; padding: 3px 0; color: var(--text); }
     .edu-list { list-style: none; }
-    .edu-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 0.75rem;
-    }
+    .edu-list li { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0.75rem; }
     .edu-icon { font-size: 17px; flex-shrink: 0; line-height: 1.6; }
     .edu-degree { font-size: 17px; font-weight: 400; color: var(--text); display: block; }
     .edu-school { font-size: 13px; color: var(--muted); display: block; margin-top: 1px; }
 
-    /* INNER PAGES */
     .inner-wrap { max-width: 860px; }
-    h1.page-title {
-      font-size: 44px;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      color: var(--text);
-    }
+    h1.page-title { font-size: 44px; font-weight: 300; margin-bottom: 2rem; color: var(--text); }
 
-    /* RESEARCH */
     h2.res-section {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
+      font-size: 20px; font-weight: 700; color: var(--text);
+      margin-top: 2.5rem; margin-bottom: 1rem;
+      padding-bottom: 6px; border-bottom: 1px solid var(--border);
     }
     h2.res-section:first-of-type { margin-top: 0; }
     ol.paper-ol { padding-left: 1.5rem; }
@@ -234,7 +124,6 @@
     .paper-sub li strong { color: var(--text); font-weight: 500; }
     .paper-abstract { font-size: 15px; line-height: 1.8; color: var(--muted); margin-top: 10px; padding-left: 1rem; border-left: 3px solid var(--border); }
 
-    /* TEACHING */
     .teach-section-title { font-size: 18px; font-weight: 700; margin-bottom: 0.75rem; margin-top: 1.75rem; color: var(--text); }
     .teach-section-title:first-of-type { margin-top: 0; }
     ul.teach-list { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.75rem; }
@@ -242,7 +131,6 @@
     ul.teach-list ul { list-style: circle; padding-left: 1.25rem; margin-top: 4px; }
     ul.teach-list ul li { font-size: 15px; color: var(--muted); }
 
-    /* CV */
     .cv-top-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
     .cv-dl-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: #fff; background: var(--accent); border-radius: 3px; padding: 7px 16px; text-decoration: none; transition: opacity 0.15s; }
     .cv-dl-btn:hover { opacity: 0.85; text-decoration: none; }
@@ -253,7 +141,6 @@
     .cv-detail strong { font-weight: 500; }
     .cv-detail .sub { color: var(--muted); font-size: 13px; display: block; }
 
-    /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; max-width: 700px; }
     .contact-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 6px; }
     .contact-val { font-size: 16px; line-height: 1.7; }
@@ -267,11 +154,9 @@
     .form-submit { padding: 9px 24px; background: var(--accent); border: none; border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; color: #fff; transition: opacity 0.15s; }
     .form-submit:hover { opacity: 0.85; }
 
-    /* FOOTER */
     footer { text-align: center; padding: 2rem; font-size: 13px; color: var(--light); border-top: 1px solid var(--border); margin-top: 2rem; }
     footer a { color: var(--light); }
 
-    /* RESPONSIVE */
     @media (max-width: 860px) {
       .home-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .avatar-circle { width: 220px; height: 220px; }
@@ -304,8 +189,6 @@
   <!-- HOME -->
   <section id="page-home" class="page active">
     <div class="home-layout">
-
-      <!-- LEFT -->
       <div class="profile-left">
         <div class="avatar-circle">
           <img src="headpic.jpg" alt="Cyrus Khalvati">
@@ -313,40 +196,33 @@
         <p class="profile-name">Cyrus Khalvati</p>
         <p class="profile-role">Ph.D. Candidate in Management</p>
         <p class="profile-uni">University of Missouri</p>
-
         <div class="social-row">
-          <!-- LinkedIn -->
           <a class="social-icon linkedin" href="#" title="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <!-- Google Scholar -->
           <a class="social-icon scholar" href="#" title="Google Scholar">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18V17c0 .88.39 1.67 1 2.22L12 22l6-2.78c.61-.55 1-1.34 1-2.22v-5.82L21 9l-9-6zM18 9l-6 3.27L6 9l6-3.27L18 9zM7 14.45v-3.27l5 2.73 5-2.73v3.27L12 17.27l-5-2.82z"/></svg>
           </a>
-          <!-- Email -->
-          <a class="social-icon email" href="/cdn-cgi/l/email-protection#05666e757263457068767c767160682b606170" title="Email">
+          <a class="social-icon email" href="mailto:ckpwf@umsystem.edu" title="Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
           </a>
-          <!-- ORCID -->
           <a class="social-icon orcid" href="#" title="ORCID">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm-1-9.5c-.69 0-1.25-.56-1.25-1.25S9.31 4 10 4s1.25.56 1.25 1.25S10.69 6.5 10 6.5zM17 16h-2v-4c0-1.1-.9-2-2-2s-2 .9-2 2v4h-2V8h2v1.08C11.58 8.4 12.25 8 13 8c1.66 0 3 1.34 3 3v5z"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- RIGHT -->
       <div>
         <h1 class="bio-heading">Biography</h1>
         <p class="bio-text">Hi! My name is Cyrus, I am a Ph.D. candidate in Management at the <a href="https://business.missouri.edu/">Trulaske College of Business</a> at the <a href="https://missouri.edu/">University of Missouri</a>.</p>
         <p class="bio-text">My research examines how the design of human resource practices both predicts and shapes performance outcomes at employee and firm levels. My work has been invited for revision at the <em><strong>Journal of Applied Psychology</strong></em> and <em><strong>Personnel Psychology</strong></em>.</p>
-        <p class="bio-text">I completed my undergraduate studies in <a href="https://www.cntraveller.com/gallery/vancouver-canada-best-things-to-do">Vancouver, Canada</a>, where I was born and raised.</p> 
+        <p class="bio-text">I completed my undergraduate studies in <a href="https://www.cntraveller.com/gallery/vancouver-canada-best-things-to-do">Vancouver, Canada</a>, where I was born and raised.</p>
         <p class="bio-text">I am eligible for the TN Visa for employment in the U.S. and <strong>do not</strong> require an H1-B visa.</p>
         <p class="bio-text">Outside of research and teaching, I enjoy playing basketball, watching professional Esports, and spending time with friends and family.</p>
         <p class="cv-inline-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4"/><path d="M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
           Download my <a href="cv.pdf">CV</a>
         </p>
-
         <div class="interests-edu-grid">
           <div>
             <p class="sub-section-title">Interests</p>
@@ -385,7 +261,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -471,7 +346,6 @@
           <ul><li>Download my <a href="Fall 2024 Evaluations - Cyrus Khalvati.pdf">Fall 2024 Evaluations</a></li></ul>
         </li>
       </ul>
-
       <p class="teach-section-title">Student Comments</p>
       <ul class="teach-list">
         <li>MGMT 6200 – Strategic Management (MBA) · Spring 2023
@@ -534,7 +408,7 @@
     <div class="inner-wrap">
       <h1 class="page-title">Contact</h1>
       <div class="contact-grid">
-        <div><div class="contact-label">Email</div><div class="contact-val"><a href="/cdn-cgi/l/email-protection#22414952554462574f515b5156474f0c474657"><span class="__cf_email__" data-cfemail="a9cac2d9decfe9dcc4dad0daddccc487cccddc">[email&#160;protected]</span></a></div></div>
+        <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:ckpwf@umsystem.edu">ckpwf@umsystem.edu</a></div></div>
         <div><div class="contact-label">Office</div><div class="contact-val">Cornell Hall<br>University of Missouri<br>Columbia, MO 65211</div></div>
         <div><div class="contact-label">Mailing Address</div><div class="contact-val">Department of Management<br>University of Missouri<br>Columbia, MO 65211</div></div>
         <div><div class="contact-label">Links</div><div class="contact-val"><a href="#">LinkedIn</a><br><a href="#">Google Scholar</a><br><a href="#">ORCID</a></div></div>
@@ -556,7 +430,14 @@
   <a href="https://creativecommons.org/licenses/by-nc-nd/4.0">CC BY NC ND 4.0</a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   function showPage(name) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-   
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    document.getElementById('link-' + name).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+</script>
+</body>
+</html>
