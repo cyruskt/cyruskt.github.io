@@ -6,37 +6,35 @@
   <title>Cyrus Khalvati</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #fff;
-      --bg2: #f5f5f5;
-      --text: #2c2c2c;
-      --muted: #555;
-      --light: #888;
-      --border: #e5e5e5;
-      --accent: #3c4da1;
-      --accent-light: #4e60b8;
-      --nav-bg: #fff;
+      --text: #2d2d2d;
+      --muted: #666;
+      --light: #999;
+      --border: #e8e8e8;
+      --accent: #1565c0;
+      --nav-border: #f0f0f0;
     }
 
     body {
       font-family: 'Roboto', sans-serif;
       background: var(--bg);
       color: var(--text);
-      font-size: 16px;
-      line-height: 1.65;
+      font-size: 17px;
+      line-height: 1.7;
     }
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ── NAV ── */
+    /* NAV */
     header {
-      background: var(--nav-bg);
-      border-bottom: 1px solid var(--border);
+      background: #fff;
+      border-bottom: 1px solid var(--nav-border);
       position: sticky;
       top: 0;
       z-index: 200;
@@ -44,27 +42,26 @@
     nav {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 2.5rem;
+      padding: 0 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 56px;
+      height: 60px;
     }
     .nav-name {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--text);
       text-decoration: none;
     }
-    .nav-links { list-style: none; display: flex; gap: 0; }
+    .nav-links { list-style: none; display: flex; }
     .nav-links a {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 400;
       color: var(--muted);
       text-decoration: none;
-      padding: 0 16px;
-      height: 56px;
+      padding: 0 14px;
+      height: 60px;
       display: flex;
       align-items: center;
       transition: color 0.15s;
@@ -72,21 +69,20 @@
     .nav-links a:hover,
     .nav-links a.active { color: var(--text); }
 
-    /* ── SITE WRAP — full width like Kyle's ── */
+    /* PAGE WRAPPER */
     .site-wrap {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 3.5rem 2.5rem 5rem;
+      padding: 4rem 2rem 6rem;
     }
-
     .page { display: none; }
     .page.active { display: block; }
 
-    /* ── HOME ── */
+    /* HOME */
     .home-layout {
       display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 4rem;
+      grid-template-columns: 320px 1fr;
+      gap: 4.5rem;
       align-items: start;
     }
 
@@ -98,11 +94,11 @@
       text-align: center;
     }
     .avatar-circle {
-      width: 270px;
-      height: 270px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
       overflow: hidden;
-      background: #d0d8ee;
+      background: #cdd5ea;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -114,30 +110,31 @@
     .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
 
     .profile-name {
-      font-family: 'Roboto', sans-serif;
-      font-size: 24px;
-      font-weight: 400;
+      font-size: 30px;
+      font-weight: 300;
       color: var(--text);
       margin-bottom: 6px;
-      line-height: 1.3;
+      line-height: 1.25;
     }
     .profile-role {
-      font-size: 14px;
+      font-size: 15px;
+      font-weight: 400;
       color: var(--muted);
-      margin-bottom: 2px;
-      font-weight: 300;
+      margin-bottom: 3px;
     }
     .profile-uni {
-      font-size: 14px;
-      color: var(--accent);
+      font-size: 15px;
       font-weight: 400;
-      margin-bottom: 1.25rem;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
     }
 
+    /* Social icons */
     .social-row {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
     }
     .social-icon {
@@ -146,28 +143,30 @@
       justify-content: center;
       width: 36px;
       height: 36px;
-      border-radius: 4px;
-      background: var(--accent);
+      border-radius: 5px;
       color: #fff;
       text-decoration: none;
-      transition: background 0.15s;
-      font-size: 11px;
-      font-weight: 700;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
     }
-    .social-icon:hover { background: var(--accent-light); text-decoration: none; }
-    .social-icon svg { width: 18px; height: 18px; }
+    .social-icon:hover { opacity: 0.82; text-decoration: none; }
+    .social-icon.linkedin  { background: #0077b5; }
+    .social-icon.ssrn      { background: #154360; font-size: 11px; font-weight: 700; letter-spacing: -0.3px; }
+    .social-icon.scholar   { background: #4285f4; }
+    .social-icon.email     { background: #5f6368; }
+    .social-icon.orcid     { background: #a6ce39; }
+    .social-icon svg { width: 19px; height: 19px; }
 
     /* RIGHT */
     .bio-heading {
-      font-family: 'Roboto', sans-serif;
-      font-size: 36px;
+      font-size: 44px;
       font-weight: 300;
       color: var(--text);
       margin-bottom: 1.25rem;
-      line-height: 1.2;
+      line-height: 1.15;
     }
     .bio-text {
-      font-size: 16px;
+      font-size: 17px;
       line-height: 1.8;
       color: var(--text);
       margin-bottom: 1rem;
@@ -175,49 +174,43 @@
     .cv-inline-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 15px;
+      gap: 7px;
+      font-size: 17px;
       color: var(--text);
-      margin-top: 0.25rem;
+      margin-top: 0.5rem;
     }
-    .cv-inline-link svg { color: var(--text); }
     .cv-inline-link a { color: var(--accent); }
 
-    /* Interests + Education side by side */
+    /* Interests + Education */
     .interests-edu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
     }
-
     .sub-section-title {
-      font-family: 'Roboto', sans-serif;
       font-size: 18px;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
     }
-
-    .dot-list { list-style: disc; padding-left: 1.25rem; }
-    .dot-list li { font-size: 15px; padding: 3px 0; color: var(--text); }
-
+    .dot-list { list-style: disc; padding-left: 1.4rem; }
+    .dot-list li { font-size: 17px; padding: 3px 0; color: var(--text); }
     .edu-list { list-style: none; }
     .edu-list li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
     }
-    .edu-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-    .edu-degree { font-size: 15px; font-weight: 400; color: var(--text); }
-    .edu-school { font-size: 13px; color: var(--muted); display: block; }
+    .edu-icon { font-size: 21px; flex-shrink: 0; line-height: 1.5; }
+    .edu-degree { font-size: 17px; font-weight: 400; color: var(--text); display: block; }
+    .edu-school { font-size: 14px; color: var(--muted); display: block; margin-top: 1px; }
 
-    /* ── INNER PAGES ── */
+    /* INNER PAGES */
     .inner-wrap { max-width: 860px; }
     h1.page-title {
-      font-family: 'Roboto', sans-serif;
-      font-size: 32px;
+      font-size: 44px;
       font-weight: 300;
       margin-bottom: 2rem;
       color: var(--text);
@@ -225,7 +218,7 @@
 
     /* RESEARCH */
     h2.res-section {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--text);
       margin-top: 2.5rem;
@@ -235,32 +228,26 @@
     }
     h2.res-section:first-of-type { margin-top: 0; }
     ol.paper-ol { padding-left: 1.5rem; }
-    ol.paper-ol > li { margin-bottom: 2rem; font-size: 16px; }
-    .paper-title-link { font-weight: 500; color: var(--accent); font-size: 16px; }
+    ol.paper-ol > li { margin-bottom: 2rem; font-size: 17px; }
+    .paper-title-link { font-weight: 500; color: var(--accent); font-size: 17px; }
     .paper-sub { list-style: none; padding-left: 0; margin-top: 6px; }
-    .paper-sub li { font-size: 14px; color: var(--muted); padding: 2px 0 2px 1rem; position: relative; }
+    .paper-sub li { font-size: 15px; color: var(--muted); padding: 2px 0 2px 1rem; position: relative; }
     .paper-sub li::before { content: '·'; position: absolute; left: 0; color: var(--light); }
     .paper-sub li strong { color: var(--text); font-weight: 500; }
-    .paper-abstract { font-size: 14px; line-height: 1.8; color: var(--muted); margin-top: 10px; padding-left: 1rem; border-left: 3px solid var(--border); }
+    .paper-abstract { font-size: 15px; line-height: 1.8; color: var(--muted); margin-top: 10px; padding-left: 1rem; border-left: 3px solid var(--border); }
 
     /* TEACHING */
-    .teach-section-title { font-size: 16px; font-weight: 700; margin-bottom: 0.75rem; margin-top: 1.75rem; color: var(--text); }
+    .teach-section-title { font-size: 18px; font-weight: 700; margin-bottom: 0.75rem; margin-top: 1.75rem; color: var(--text); }
     .teach-section-title:first-of-type { margin-top: 0; }
     ul.teach-list { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.75rem; }
-    ul.teach-list > li { font-size: 16px; margin-bottom: 0.6rem; }
+    ul.teach-list > li { font-size: 17px; margin-bottom: 0.6rem; }
     ul.teach-list ul { list-style: circle; padding-left: 1.25rem; margin-top: 4px; }
-    ul.teach-list ul li { font-size: 14px; color: var(--muted); }
+    ul.teach-list ul li { font-size: 15px; color: var(--muted); }
 
     /* CV */
     .cv-top-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-    .cv-dl-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 14px; font-weight: 500; color: #fff;
-      background: var(--accent); border-radius: 3px;
-      padding: 7px 16px; text-decoration: none;
-      transition: background 0.15s;
-    }
-    .cv-dl-btn:hover { background: var(--accent-light); text-decoration: none; }
+    .cv-dl-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: #fff; background: var(--accent); border-radius: 3px; padding: 7px 16px; text-decoration: none; transition: opacity 0.15s; }
+    .cv-dl-btn:hover { opacity: 0.85; text-decoration: none; }
     .cv-block { margin-bottom: 2.5rem; }
     .cv-block-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 1rem; }
     .cv-row { display: grid; grid-template-columns: 130px 1fr; gap: 0.5rem 1.25rem; margin-bottom: 0.85rem; font-size: 15px; }
@@ -271,31 +258,31 @@
     /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; max-width: 700px; }
     .contact-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 6px; }
-    .contact-val { font-size: 15px; line-height: 1.7; }
+    .contact-val { font-size: 16px; line-height: 1.7; }
     .contact-val a { color: var(--accent); }
-    .form-title { font-size: 18px; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+    .form-title { font-size: 19px; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
     .form-row { margin-bottom: 1rem; }
-    .form-row label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; font-weight: 500; }
+    .form-row label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 4px; font-weight: 500; }
     .form-row input, .form-row textarea { width: 100%; max-width: 540px; padding: 9px 12px; border: 1px solid var(--border); border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 15px; color: var(--text); background: var(--bg); outline: none; transition: border-color 0.15s; }
     .form-row input:focus, .form-row textarea:focus { border-color: var(--accent); }
     .form-row textarea { height: 130px; resize: vertical; }
-    .form-submit { padding: 9px 24px; background: var(--accent); border: none; border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; color: #fff; transition: background 0.15s; }
-    .form-submit:hover { background: var(--accent-light); }
+    .form-submit { padding: 9px 24px; background: var(--accent); border: none; border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; color: #fff; transition: opacity 0.15s; }
+    .form-submit:hover { opacity: 0.85; }
 
     /* FOOTER */
     footer { text-align: center; padding: 2rem; font-size: 13px; color: var(--light); border-top: 1px solid var(--border); margin-top: 2rem; }
     footer a { color: var(--light); }
 
     /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .home-layout { grid-template-columns: 1fr; gap: 2rem; }
-      .profile-left { margin-bottom: 0; }
-      .avatar-circle { width: 200px; height: 200px; }
+    @media (max-width: 860px) {
+      .home-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .avatar-circle { width: 220px; height: 220px; }
       .interests-edu-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       nav { padding: 0 1rem; }
       .nav-links a { padding: 0 10px; font-size: 13px; }
-      .site-wrap { padding: 2rem 1.25rem 3rem; }
+      .site-wrap { padding: 2.5rem 1.25rem 4rem; }
+      .bio-heading, h1.page-title { font-size: 32px; }
     }
   </style>
 </head>
@@ -305,7 +292,7 @@
   <nav>
     <a class="nav-name" href="#" onclick="showPage('home'); return false;">Cyrus Khalvati</a>
     <ul class="nav-links">
-      <li><a href="#" id="link-home" class="active" onclick="showPage('home'); return false;">Research</a></li>
+      <li><a href="#" id="link-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
       <li><a href="#" id="link-research" onclick="showPage('research'); return false;">Research</a></li>
       <li><a href="#" id="link-teaching" onclick="showPage('teaching'); return false;">Teaching</a></li>
       <li><a href="#" id="link-cv" onclick="showPage('cv'); return false;">CV</a></li>
@@ -331,18 +318,22 @@
 
         <div class="social-row">
           <!-- LinkedIn -->
-          <a class="social-icon" href="#" title="LinkedIn">
+          <a class="social-icon linkedin" href="#" title="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
           <!-- SSRN -->
-          <a class="social-icon" href="#" title="SSRN" style="font-size:12px;font-weight:700;letter-spacing:-0.5px;">SSRN</a>
+          <a class="social-icon ssrn" href="#" title="SSRN">SSRN</a>
           <!-- Google Scholar -->
-          <a class="social-icon" href="#" title="Google Scholar">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <a class="social-icon scholar" href="#" title="Google Scholar">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18V17c0 .88.39 1.67 1 2.22L12 22l6-2.78c.61-.55 1-1.34 1-2.22v-5.82L21 9l-9-6zM18 9l-6 3.27L6 9l6-3.27L18 9zM7 14.45v-3.27l5 2.73 5-2.73v3.27L12 17.27l-5-2.82z"/></svg>
           </a>
           <!-- Email -->
-          <a class="social-icon" href="mailto:janedoe@university.edu" title="Email">
+          <a class="social-icon email" href="mailto:ckpwf@umsystem.edu" title="Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </a>
+          <!-- ORCID -->
+          <a class="social-icon orcid" href="#" title="ORCID">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm-1-9.5c-.69 0-1.25-.56-1.25-1.25S9.31 4 10 4s1.25.56 1.25 1.25S10.69 6.5 10 6.5zM17 16h-2v-4c0-1.1-.9-2-2-2s-2 .9-2 2v4h-2V8h2v1.08C11.58 8.4 12.25 8 13 8c1.66 0 3 1.34 3 3v5z"/></svg>
           </a>
         </div>
       </div>
@@ -351,16 +342,14 @@
       <div>
         <h1 class="bio-heading">Biography</h1>
         <p class="bio-text">Hi! My name is Cyrus, I am a Ph.D. candidate in Management at the <a href="https://business.missouri.edu/">Trulaske College of Business</a> at the <a href="https://missouri.edu/">University of Missouri</a>.</p>
-        <p class="bio-text">My research examines how the design of human resource practices both predicts and shapes performance outcomes at employee and firm levels. My work has been invited for revision at the Journal of Applied Psychology and Personnel Psychology.</p>
-        <p class="bio-text">I completed my undergraduate studies in <a href="https://www.cntraveller.com/gallery/vancouver-canada-best-things-to-do">Vancouver, Canada</a>, where I was born and raised. I am eligible for the TN Visa for employment in the U.S. and
-do not require an H1-B visa.</p>
+        <p class="bio-text">My research examines how the design of human resource practices both predicts and shapes performance outcomes at employee and firm levels. My work has been invited for revision at the <em>Journal of Applied Psychology</em> and <em>Personnel Psychology</em>.</p>
+        <p class="bio-text">I completed my undergraduate studies in <a href="https://www.cntraveller.com/gallery/vancouver-canada-best-things-to-do">Vancouver, Canada</a>, where I was born and raised. I am eligible for the TN Visa for employment in the U.S. and do not require an H1-B visa.</p>
         <p class="bio-text">Outside of research and teaching, I enjoy playing basketball, watching professional Esports, and spending time with friends and family.</p>
         <p class="cv-inline-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4"/><path d="M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
           Download my <a href="cv.pdf">CV</a>
         </p>
 
-        <!-- Interests + Education side by side -->
         <div class="interests-edu-grid">
           <div>
             <p class="sub-section-title">Interests</p>
@@ -470,33 +459,33 @@ do not require an H1-B visa.</p>
   </section>
 
   <!-- TEACHING -->
-<section id="page-teaching" class="page">
-  <div class="inner-wrap">
-    <h1 class="page-title">Teaching</h1>
-    <p class="teach-section-title">Instructor</p>
-    <ul class="teach-list">
-      <li>MGMT 4030 – Organizational Behavior (4.8/5) · Fall 2025
-        <ul><li>Download my <a href="Fall 2025 Evaluations - Cyrus Khalvati.pdf">Fall 2025 Evaluations</a></li></ul>
-      </li>
-      <li>MGMT 4030 – Organizational Behavior (4.8/5) · Spring 2025
-        <ul><li>Download my <a href="Spring 2025 Evaluations - Cyrus Khalvati.pdf">Spring 2025 Evaluations</a></li></ul>
-      </li>
-      <li>MGMT 4030 – Organizational Behavior (4.7/5) · Fall 2024
-        <ul><li>Download my <a href="Fall 2024 Evaluations - Cyrus Khalvati.pdf">Fall 2024 Evaluations</a></li></ul>
-      </li>
-    </ul>
+  <section id="page-teaching" class="page">
+    <div class="inner-wrap">
+      <h1 class="page-title">Teaching</h1>
+      <p class="teach-section-title">Instructor</p>
+      <ul class="teach-list">
+        <li>MGMT 4030 – Organizational Behavior (4.8/5) · Fall 2025
+          <ul><li>Download my <a href="Fall 2025 Evaluations - Cyrus Khalvati.pdf">Fall 2025 Evaluations</a></li></ul>
+        </li>
+        <li>MGMT 4030 – Organizational Behavior (4.8/5) · Spring 2025
+          <ul><li>Download my <a href="Spring 2025 Evaluations - Cyrus Khalvati.pdf">Spring 2025 Evaluations</a></li></ul>
+        </li>
+        <li>MGMT 4030 – Organizational Behavior (4.7/5) · Fall 2024
+          <ul><li>Download my <a href="Fall 2024 Evaluations - Cyrus Khalvati.pdf">Fall 2024 Evaluations</a></li></ul>
+        </li>
+      </ul>
 
-    <p class="teach-section-title">Student Comments</p>
-    <ul class="teach-list">
-      <li>MGMT 6200 – Strategic Management (MBA) · Spring 2023
-        <ul><li>Professor Placeholder Name</li></ul>
-      </li>
-      <li>MGMT 3100 – Introduction to Management · Fall 2022
-        <ul><li>Professor Placeholder Name</li></ul>
-      </li>
-    </ul>
-  </div>
-</section>
+      <p class="teach-section-title">Student Comments</p>
+      <ul class="teach-list">
+        <li>MGMT 6200 – Strategic Management (MBA) · Spring 2023
+          <ul><li>Professor Placeholder Name</li></ul>
+        </li>
+        <li>MGMT 3100 – Introduction to Management · Fall 2022
+          <ul><li>Professor Placeholder Name</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
 
   <!-- CV -->
   <section id="page-cv" class="page">
@@ -510,9 +499,9 @@ do not require an H1-B visa.</p>
       </div>
       <div class="cv-block">
         <div class="cv-block-title">Education</div>
-        <div class="cv-row"><div class="cv-year">Exp. 2026</div><div class="cv-detail"><strong>Ph.D. in Management</strong><span class="sub">University of Placeholder · Advisor: Prof. Name</span></div></div>
-        <div class="cv-row"><div class="cv-year">2022</div><div class="cv-detail"><strong>M.S. in Management</strong><span class="sub">University of Placeholder</span></div></div>
-        <div class="cv-row"><div class="cv-year">2019</div><div class="cv-detail"><strong>B.S. in Business Administration</strong><span class="sub">University of Placeholder</span></div></div>
+        <div class="cv-row"><div class="cv-year">Exp. 2027</div><div class="cv-detail"><strong>Ph.D. in Management</strong><span class="sub">University of Missouri</span></div></div>
+        <div class="cv-row"><div class="cv-year">2022</div><div class="cv-detail"><strong>M.Sc. in International Business</strong><span class="sub">University of Hertfordshire</span></div></div>
+        <div class="cv-row"><div class="cv-year">2020</div><div class="cv-detail"><strong>B.B.A. in International Business</strong><span class="sub">Capilano University</span></div></div>
       </div>
       <div class="cv-block">
         <div class="cv-block-title">Research</div>
@@ -523,25 +512,22 @@ do not require an H1-B visa.</p>
       </div>
       <div class="cv-block">
         <div class="cv-block-title">Teaching Experience</div>
-        <div class="cv-row"><div class="cv-year">2023–2024</div><div class="cv-detail"><strong>MGMT 4010 – Organizational Behavior</strong><span class="sub">Instructor of record · University of Placeholder</span></div></div>
-        <div class="cv-row"><div class="cv-year">2022–2023</div><div class="cv-detail"><strong>MGMT 6200 – Strategic Management</strong><span class="sub">Teaching assistant · University of Placeholder</span></div></div>
+        <div class="cv-row"><div class="cv-year">2024–2025</div><div class="cv-detail"><strong>MGMT 4030 – Organizational Behavior</strong><span class="sub">Instructor of record · University of Missouri</span></div></div>
       </div>
       <div class="cv-block">
         <div class="cv-block-title">Awards &amp; Fellowships</div>
-        <div class="cv-row"><div class="cv-year">2024</div><div class="cv-detail"><strong>Best Dissertation Award</strong><span class="sub">College of Business, University of Placeholder</span></div></div>
-        <div class="cv-row"><div class="cv-year">2023</div><div class="cv-detail"><strong>Doctoral Fellowship</strong><span class="sub">University of Placeholder</span></div></div>
-        <div class="cv-row"><div class="cv-year">2022</div><div class="cv-detail"><strong>Research Grant</strong><span class="sub">Granting Institution</span></div></div>
+        <div class="cv-row"><div class="cv-year">2024</div><div class="cv-detail"><strong>Best Dissertation Award</strong><span class="sub">College of Business, University of Missouri</span></div></div>
+        <div class="cv-row"><div class="cv-year">2023</div><div class="cv-detail"><strong>Doctoral Fellowship</strong><span class="sub">University of Missouri</span></div></div>
       </div>
       <div class="cv-block">
         <div class="cv-block-title">Presentations</div>
         <div class="cv-row"><div class="cv-year">2025</div><div class="cv-detail"><strong>Academy of Management Annual Meeting</strong><span class="sub">"Paper Title" · Chicago, IL</span></div></div>
         <div class="cv-row"><div class="cv-year">2024</div><div class="cv-detail"><strong>Strategic Management Society</strong><span class="sub">"Paper Title" · London, UK</span></div></div>
-        <div class="cv-row"><div class="cv-year">2024</div><div class="cv-detail"><strong>University of Placeholder — Department Seminar</strong><span class="sub">"Paper Title"</span></div></div>
       </div>
       <div class="cv-block">
         <div class="cv-block-title">Service</div>
         <div class="cv-row"><div class="cv-year">2023–</div><div class="cv-detail"><strong>Reviewer</strong><span class="sub">Journal of Management, Academy of Management Journal</span></div></div>
-        <div class="cv-row"><div class="cv-year">2022–</div><div class="cv-detail"><strong>Ph.D. Representative</strong><span class="sub">Department of Management, University of Placeholder</span></div></div>
+        <div class="cv-row"><div class="cv-year">2022–</div><div class="cv-detail"><strong>Ph.D. Representative</strong><span class="sub">Department of Management, University of Missouri</span></div></div>
       </div>
     </div>
   </section>
@@ -551,10 +537,10 @@ do not require an H1-B visa.</p>
     <div class="inner-wrap">
       <h1 class="page-title">Contact</h1>
       <div class="contact-grid">
-        <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:janedoe@university.edu">janedoe@university.edu</a></div></div>
-        <div><div class="contact-label">Office</div><div class="contact-val">Building Name, Room 000<br>University of Placeholder<br>City, State 00000</div></div>
-        <div><div class="contact-label">Mailing Address</div><div class="contact-val">Department of Management<br>University of Placeholder<br>123 University Ave<br>City, State 00000</div></div>
-        <div><div class="contact-label">Links</div><div class="contact-val"><a href="#">Google Scholar</a><br><a href="#">SSRN</a><br><a href="#">LinkedIn</a></div></div>
+        <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:ckpwf@umsystem.edu">ckpwf@umsystem.edu</a></div></div>
+        <div><div class="contact-label">Office</div><div class="contact-val">Cornell Hall<br>University of Missouri<br>Columbia, MO 65211</div></div>
+        <div><div class="contact-label">Mailing Address</div><div class="contact-val">Department of Management<br>University of Missouri<br>Columbia, MO 65211</div></div>
+        <div><div class="contact-label">Links</div><div class="contact-val"><a href="#">LinkedIn</a><br><a href="#">SSRN</a><br><a href="#">Google Scholar</a><br><a href="#">ORCID</a></div></div>
       </div>
       <p class="form-title">Send a Message</p>
       <form onsubmit="return false;">
