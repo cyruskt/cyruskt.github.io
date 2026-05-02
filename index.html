@@ -16,7 +16,7 @@
       --muted: #666;
       --light: #999;
       --border: #e8e8e8;
-      --accent: #1a73e8;
+      --accent: #1558d6;
       --nav-border: #f0f0f0;
     }
 
@@ -31,9 +31,11 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* NAV — with shadow like Kyle */
     header {
       background: #fff;
       border-bottom: 1px solid var(--nav-border);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 200;
@@ -47,7 +49,8 @@
       justify-content: space-between;
       height: 60px;
     }
-    .nav-name { font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none; }
+    /* Bigger nav name */
+    .nav-name { font-size: 22px; font-weight: 700; color: var(--text); text-decoration: none; }
     .nav-links { list-style: none; display: flex; }
     .nav-links a {
       font-size: 15px; font-weight: 400; color: var(--muted);
@@ -56,7 +59,7 @@
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
 
-    .site-wrap { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .site-wrap { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
     .page { display: none; }
     .page.active { display: block; }
 
@@ -93,7 +96,24 @@
 
     .bio-heading { font-size: 44px; font-weight: 300; color: var(--text); margin-bottom: 1.25rem; line-height: 1.15; }
     .bio-text { font-size: 19px; line-height: 1.8; color: var(--text); margin-bottom: 1rem; }
-    .cv-inline-link { display: inline-flex; align-items: center; gap: 7px; font-size: 19px; color: var(--text); margin-top: 0.5rem; }
+
+    /* CV link — Kyle style: just arrow + text, no box */
+    .cv-inline-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 19px;
+      color: var(--text);
+      margin-top: 0.5rem;
+    }
+    .cv-inline-link .cv-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      color: var(--text);
+    }
     .cv-inline-link a { color: var(--accent); }
 
     .interests-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2.5rem; }
@@ -106,12 +126,13 @@
     .edu-degree { font-size: 17px; font-weight: 400; color: var(--text); display: block; }
     .edu-school { font-size: 13px; color: var(--muted); display: block; margin-top: 1px; }
 
+    /* Inner pages — less top padding so content sits higher */
     .inner-wrap { max-width: 860px; }
-    h1.page-title { font-size: 44px; font-weight: 300; margin-bottom: 2rem; color: var(--text); }
+    h1.page-title { font-size: 44px; font-weight: 300; margin-bottom: 1.25rem; color: var(--text); }
 
     h2.res-section {
       font-size: 20px; font-weight: 700; color: var(--text);
-      margin-top: 2.5rem; margin-bottom: 1rem;
+      margin-top: 2rem; margin-bottom: 1rem;
       padding-bottom: 6px; border-bottom: 1px solid var(--border);
     }
     h2.res-section:first-of-type { margin-top: 0; }
@@ -124,12 +145,12 @@
     .paper-sub li strong { color: var(--text); font-weight: 500; }
     .paper-abstract { font-size: 15px; line-height: 1.8; color: var(--muted); margin-top: 10px; padding-left: 1rem; border-left: 3px solid var(--border); }
 
+    /* Teaching — no indent, flush left */
     .teach-section-title { font-size: 18px; font-weight: 700; margin-bottom: 0.75rem; margin-top: 1.75rem; color: var(--text); }
     .teach-section-title:first-of-type { margin-top: 0; }
-    ul.teach-list { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.75rem; }
-    ul.teach-list > li { font-size: 19px; margin-bottom: 0.6rem; }
-    ul.teach-list ul { list-style: circle; padding-left: 1.25rem; margin-top: 4px; }
-    ul.teach-list ul li { font-size: 15px; color: var(--muted); }
+    ul.teach-list { list-style: none; padding-left: 0; margin-bottom: 1.75rem; }
+    ul.teach-list > li { font-size: 19px; margin-bottom: 0.75rem; }
+    ul.teach-list > li .teach-sub { font-size: 15px; color: var(--muted); margin-top: 3px; display: block; }
 
     .cv-top-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
     .cv-dl-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: #fff; background: var(--accent); border-radius: 3px; padding: 7px 16px; text-decoration: none; transition: opacity 0.15s; }
@@ -164,7 +185,7 @@
       .contact-grid { grid-template-columns: 1fr; }
       nav { padding: 0 1rem; }
       .nav-links a { padding: 0 10px; font-size: 13px; }
-      .site-wrap { padding: 2.5rem 1.25rem 4rem; }
+      .site-wrap { padding: 2rem 1.25rem 4rem; }
       .bio-heading, h1.page-title { font-size: 32px; }
     }
   </style>
@@ -218,8 +239,11 @@
         <p class="bio-text">My research examines how the design of human resource practices both predicts and shapes performance outcomes at employee and firm levels. My work has been invited for revision at the <em><strong>Journal of Applied Psychology</strong></em> and <em><strong>Personnel Psychology</strong></em>.</p>
         <p class="bio-text">I completed my undergraduate studies in <a href="https://www.cntraveller.com/gallery/vancouver-canada-best-things-to-do">Vancouver, Canada</a>, where I was born and raised. As a Canadian, I am eligible for the TN Visa for employment in the U.S. and <strong>do not</strong> require an H1-B visa.</p>
         <p class="bio-text">Outside of research and teaching, I enjoy playing basketball, watching professional Esports, and spending time with friends and family.</p>
+        <!-- Kyle-style CV link: download arrow icon + "Download my CV" -->
         <p class="cv-inline-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4"/><path d="M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+          <span class="cv-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zm7-18v12.17l-4.59-4.58L6 11l6 6 6-6-1.41-1.41L13 14.17V2h-1z"/></svg>
+          </span>
           Download my <a href="cv.pdf">CV</a>
         </p>
         <div class="interests-edu-grid">
@@ -277,7 +301,7 @@
             <li>3rd round R&R at <strong>Journal of Applied Psychology</strong></li>
             <li>See the <a href="#">slides</a></li>
           </ul>
-          <p class="paper-abstract">We study how work-hour restrictions affect firm productivity using panel data of 514 firm-year observations from 251 firms under Korea’s 52-hour policy. Firms experience productivity declines after the policy, driven by disrupted effort–performance expectations when duration-based work is constrained. Firms subject to the policy show negative average productivity effects in the initial period. Due to limited working time, employees must shift from duration-based to intensity-based effort. Firms with stronger performance-based pay show weaker productivity losses because incentives strengthen performance–reward linkages and motivate this adjustment..</p>
+          <p class="paper-abstract">We study how work-hour restrictions affect firm productivity using panel data of 514 firm-year observations from 251 firms under Korea's 52-hour policy. Firms experience productivity declines after the policy, driven by disrupted effort–performance expectations when duration-based work is constrained. Firms subject to the policy show negative average productivity effects in the initial period. Due to limited working time, employees must shift from duration-based to intensity-based effort. Firms with stronger performance-based pay show weaker productivity losses because incentives strengthen performance–reward linkages and motivate this adjustment.</p>
         </li>
         <li>
           <a class="paper-title-link" href="paper2.pdf">"Shared Adversity, Greater Effort: How Hyperinflation Alters the Meaning and Motivational Influence of Economic Hardship"</a>
@@ -285,7 +309,7 @@
             <li>With <a href="#">John Schaubroeck, Ann Peng, & Ozgur Demirtas</a></li>
             <li>3rd round R&R at <strong>Personnel Psychology</strong></li>
           </ul>
-          <p class="paper-abstract">We study how economic hardship affects employee work effort using a field sample of 409 healthcare employees in Türkiye during a period of extreme inflation (~85%) and two experiments. Employees typically reduce effort under hardship, driven by cognitive strain and self-focused concerns, but maintain effort when hardship is widely shared during hyperinflation. Workers experiencing worsening hardship show no decline in effort in the field and weaker negative effects in experiments under hyperinflation. Due to shared economic conditions, individuals shift toward a salient social identity that emphasizes role obligations. This sustains work effort and links to higher job performance among those high in perspective taking..</p>
+          <p class="paper-abstract">We study how economic hardship affects employee work effort using a field sample of 409 healthcare employees in Türkiye during a period of extreme inflation (~85%) and two experiments. Employees typically reduce effort under hardship, driven by cognitive strain and self-focused concerns, but maintain effort when hardship is widely shared during hyperinflation. Workers experiencing worsening hardship show no decline in effort in the field and weaker negative effects in experiments under hyperinflation. Due to shared economic conditions, individuals shift toward a salient social identity that emphasizes role obligations. This sustains work effort and links to higher job performance among those high in perspective taking.</p>
         </li>
       </ol>
 
@@ -333,23 +357,28 @@
       <h1 class="page-title">Teaching</h1>
       <p class="teach-section-title">Instructor</p>
       <ul class="teach-list">
-        <li>MGMT 4030 – Organizational Behavior (4.8/5) · Fall 2025
-          <ul><li>Download my <a href="Fall 2025 Evaluations - Cyrus Khalvati.pdf">Fall 2025 Evaluations</a></li></ul>
+        <li>
+          MGMT 4030 – Organizational Behavior (4.8/5) · Fall 2025
+          <span class="teach-sub"><a href="Fall 2025 Evaluations - Cyrus Khalvati.pdf">Download Fall 2025 Evaluations</a></span>
         </li>
-        <li>MGMT 4030 – Organizational Behavior (4.8/5) · Spring 2025
-          <ul><li>Download my <a href="Spring 2025 Evaluations - Cyrus Khalvati.pdf">Spring 2025 Evaluations</a></li></ul>
+        <li>
+          MGMT 4030 – Organizational Behavior (4.8/5) · Spring 2025
+          <span class="teach-sub"><a href="Spring 2025 Evaluations - Cyrus Khalvati.pdf">Download Spring 2025 Evaluations</a></span>
         </li>
-        <li>MGMT 4030 – Organizational Behavior (4.7/5) · Fall 2024
-          <ul><li>Download my <a href="Fall 2024 Evaluations - Cyrus Khalvati.pdf">Fall 2024 Evaluations</a></li></ul>
+        <li>
+          MGMT 4030 – Organizational Behavior (4.7/5) · Fall 2024
+          <span class="teach-sub"><a href="Fall 2024 Evaluations - Cyrus Khalvati.pdf">Download Fall 2024 Evaluations</a></span>
         </li>
       </ul>
       <p class="teach-section-title">Student Comments</p>
       <ul class="teach-list">
-        <li>MGMT 6200 – Strategic Management (MBA) · Spring 2023
-          <ul><li>Professor Placeholder Name</li></ul>
+        <li>
+          MGMT 6200 – Strategic Management (MBA) · Spring 2023
+          <span class="teach-sub">Professor Placeholder Name</span>
         </li>
-        <li>MGMT 3100 – Introduction to Management · Fall 2022
-          <ul><li>Professor Placeholder Name</li></ul>
+        <li>
+          MGMT 3100 – Introduction to Management · Fall 2022
+          <span class="teach-sub">Professor Placeholder Name</span>
         </li>
       </ul>
     </div>
@@ -408,7 +437,7 @@
         <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:cyruskhalvati@missouri.edu">cyruskhalvati@missouri.edu</a></div></div>
         <div><div class="contact-label">Office</div><div class="contact-val">509 Cornell Hall<br>Trulaske College of Business<br>Columbia, MO 65211</div></div>
         <div><div class="contact-label">Mailing Address</div><div class="contact-val">Department of Management<br>University of Missouri<br>Columbia, MO 65211</div></div>
-        <div><div class="contact-label">Links</div><div class="contact-val"><a href="#">LinkedIn</a><br><a href="#">Google Scholar</a><br><a href="#">ORCID</a></div></div>
+        <div><div class="contact-label">Links</div><div class="contact-val"><a href="#">LinkedIn</a><br><a href="#">Google Scholar</a><br><a href="https://orcid.org/0009-0009-5330-5573">ORCID</a></div></div>
       </div>
       <p class="form-title">Send a Message</p>
       <form onsubmit="return false;">
