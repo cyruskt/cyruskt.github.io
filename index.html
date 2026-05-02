@@ -12,12 +12,29 @@
 
     :root {
       --bg: #fff;
+      --bg2: #f7f7f7;
       --text: #2d2d2d;
       --muted: #666;
       --light: #999;
       --border: #e8e8e8;
-      --accent: #1558d6;
+      --accent: #0d4dff;
+      --nav-bg: #fff;
       --nav-border: #f0f0f0;
+      --shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    /* Dark mode — dark blue palette */
+    [data-theme="dark"] {
+      --bg: #0d1b2e;
+      --bg2: #142338;
+      --text: #e6ecf5;
+      --muted: #a8b3c4;
+      --light: #7d8a9e;
+      --border: #1f3050;
+      --accent: #4d8bff;
+      --nav-bg: #0d1b2e;
+      --nav-border: #1f3050;
+      --shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
 
     body {
@@ -26,29 +43,32 @@
       color: var(--text);
       font-size: 19px;
       line-height: 1.7;
+      transition: background 0.2s, color 0.2s;
     }
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     header {
-      background: #fff;
+      background: var(--nav-bg);
       border-bottom: 1px solid var(--nav-border);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow);
       position: sticky;
       top: 0;
       z-index: 200;
+      transition: background 0.2s, border-color 0.2s;
     }
     nav {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 60px;
     }
     .nav-name { font-size: 22px; font-weight: 700; color: var(--text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; }
     .nav-links { list-style: none; display: flex; }
     .nav-links a {
       font-size: 15px; font-weight: 400; color: var(--muted);
@@ -57,9 +77,27 @@
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
 
-    .site-wrap { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem 6rem; }
-    .page { display: none; }
+    /* Theme toggle button */
+    .theme-toggle {
+      background: none; border: none; cursor: pointer;
+      padding: 8px; margin-left: 8px;
+      color: var(--muted);
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      transition: color 0.15s, background 0.15s;
+    }
+    .theme-toggle:hover { color: var(--text); background: var(--bg2); }
+    .theme-toggle svg { width: 20px; height: 20px; }
+    .theme-toggle .moon-icon { display: block; }
+    .theme-toggle .sun-icon { display: none; }
+    [data-theme="dark"] .theme-toggle .moon-icon { display: none; }
+    [data-theme="dark"] .theme-toggle .sun-icon { display: block; }
+
+    .site-wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem 6rem; }
+    .page { display: none; padding-top: 4rem; }
     .page.active { display: block; }
+    /* Inner pages sit higher */
+    #page-research, #page-teaching, #page-cv, #page-contact { padding-top: 2rem; }
 
     .home-layout {
       display: grid;
@@ -76,7 +114,6 @@
     }
     .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* Bigger name under photo — matching Kyle's large display size */
     .profile-name { font-size: 36px; font-weight: 300; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
     .profile-role { font-size: 17px; font-weight: 400; color: var(--muted); margin-bottom: 3px; }
     .profile-uni { font-size: 17px; font-weight: 400; color: var(--accent); margin-bottom: 1.4rem; }
@@ -97,10 +134,16 @@
     .bio-heading { font-size: 44px; font-weight: 300; color: var(--text); margin-bottom: 1.25rem; line-height: 1.15; }
     .bio-text { font-size: 19px; line-height: 1.8; color: var(--text); margin-bottom: 1rem; }
 
+    /* Kyle-style download CV — clean tray-style icon */
     .cv-inline-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 19px; color: var(--text); margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 19px;
+      color: var(--text);
+      margin-top: 0.5rem;
     }
+    .cv-inline-link svg { color: var(--text); }
     .cv-inline-link a { color: var(--accent); }
 
     .interests-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2.5rem; }
@@ -114,7 +157,7 @@
     .edu-school { font-size: 13px; color: var(--muted); display: block; margin-top: 1px; }
 
     .inner-wrap { max-width: 860px; }
-    h1.page-title { font-size: 44px; font-weight: 300; margin-bottom: 2rem; color: var(--text); }
+    h1.page-title { font-size: 44px; font-weight: 300; margin-bottom: 1.5rem; color: var(--text); }
 
     h2.res-section {
       font-size: 20px; font-weight: 700; color: var(--text);
@@ -137,7 +180,7 @@
     ul.teach-list > li { font-size: 19px; margin-bottom: 0.75rem; }
     ul.teach-list > li .teach-sub { font-size: 15px; color: var(--muted); margin-top: 3px; display: block; }
 
-    /* CV page — PDF embed */
+    /* CV page — embedded PDF viewer */
     .cv-page-wrap { max-width: 900px; }
     .cv-page-header {
       display: flex; justify-content: space-between; align-items: center;
@@ -155,16 +198,7 @@
       height: 85vh;
       border: 1px solid var(--border);
       border-radius: 4px;
-    }
-    .cv-fallback {
-      display: none;
-      padding: 3rem;
-      text-align: center;
       background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      font-size: 16px;
-      color: var(--muted);
     }
 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; max-width: 700px; }
@@ -174,7 +208,13 @@
     .form-title { font-size: 19px; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
     .form-row { margin-bottom: 1rem; }
     .form-row label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 4px; font-weight: 500; }
-    .form-row input, .form-row textarea { width: 100%; max-width: 540px; padding: 9px 12px; border: 1px solid var(--border); border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 15px; color: var(--text); background: var(--bg); outline: none; transition: border-color 0.15s; }
+    .form-row input, .form-row textarea {
+      width: 100%; max-width: 540px; padding: 9px 12px;
+      border: 1px solid var(--border); border-radius: 3px;
+      font-family: 'Roboto', sans-serif; font-size: 15px;
+      color: var(--text); background: var(--bg); outline: none;
+      transition: border-color 0.15s;
+    }
     .form-row input:focus, .form-row textarea:focus { border-color: var(--accent); }
     .form-row textarea { height: 130px; resize: vertical; }
     .form-submit { padding: 9px 24px; background: var(--accent); border: none; border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; color: #fff; transition: opacity 0.15s; }
@@ -191,7 +231,9 @@
       .contact-grid { grid-template-columns: 1fr; }
       nav { padding: 0 1rem; }
       .nav-links a { padding: 0 10px; font-size: 13px; }
-      .site-wrap { padding: 2.5rem 1.25rem 4rem; }
+      .site-wrap { padding: 0 1rem 4rem; }
+      .page { padding-top: 2.5rem; }
+      #page-research, #page-teaching, #page-cv, #page-contact { padding-top: 1.5rem; }
       .bio-heading, h1.page-title { font-size: 32px; }
       .cv-embed { height: 60vh; }
     }
@@ -202,13 +244,31 @@
 <header>
   <nav>
     <a class="nav-name" href="#" onclick="showPage('home'); return false;">Cyrus Khalvati</a>
-    <ul class="nav-links">
-      <li><a href="#" id="link-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
-      <li><a href="#" id="link-research" onclick="showPage('research'); return false;">Research</a></li>
-      <li><a href="#" id="link-teaching" onclick="showPage('teaching'); return false;">Teaching</a></li>
-      <li><a href="#" id="link-cv" onclick="showPage('cv'); return false;">CV</a></li>
-      <li><a href="#" id="link-contact" onclick="showPage('contact'); return false;">Contact</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#" id="link-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
+        <li><a href="#" id="link-research" onclick="showPage('research'); return false;">Research</a></li>
+        <li><a href="#" id="link-teaching" onclick="showPage('teaching'); return false;">Teaching</a></li>
+        <li><a href="#" id="link-cv" onclick="showPage('cv'); return false;">CV</a></li>
+        <li><a href="#" id="link-contact" onclick="showPage('contact'); return false;">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+    </div>
   </nav>
 </header>
 
@@ -246,10 +306,13 @@
         <p class="bio-text">My research examines how the design of human resource practices both predicts and shapes performance outcomes at employee and firm levels. My work has been invited for revision at the <em><strong>Journal of Applied Psychology</strong></em> and <em><strong>Personnel Psychology</strong></em>.</p>
         <p class="bio-text">I completed my undergraduate studies in <a href="https://www.cntraveller.com/gallery/vancouver-canada-best-things-to-do">Vancouver, Canada</a>, where I was born and raised. As a Canadian, I am eligible for the TN Visa for employment in the U.S. and <strong>do not</strong> require an H1-B visa.</p>
         <p class="bio-text">Outside of research and teaching, I enjoy playing basketball, watching professional Esports, and spending time with friends and family.</p>
+        <!-- Kyle-style CV download icon: clean tray with arrow -->
         <p class="cv-inline-link">
-          <span style="display:inline-flex;align-items:center;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zm7-18v12.17l-4.59-4.58L6 11l6 6 6-6-1.41-1.41L13 14.17V2h-1z"/></svg>
-          </span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
           Download my <a href="cv.pdf">CV</a>
         </p>
         <div class="interests-edu-grid">
@@ -390,22 +453,21 @@
     </div>
   </section>
 
-  <!-- CV — embedded PDF viewer -->
+  <!-- CV -->
   <section id="page-cv" class="page">
     <div class="cv-page-wrap">
       <div class="cv-page-header">
         <h1 class="page-title" style="margin-bottom:0;">Curriculum Vitae</h1>
         <a class="cv-dl-btn" href="cv.pdf" download>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zm7-18v12.17l-4.59-4.58L6 11l6 6 6-6-1.41-1.41L13 14.17V2h-1z"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
           Download PDF
         </a>
       </div>
-      <iframe class="cv-embed" src="cv.pdf" title="Cyrus Khalvati CV">
-        <div class="cv-fallback">
-          Your browser cannot display the PDF inline.
-          <a href="cv.pdf" download>Click here to download the CV</a>.
-        </div>
-      </iframe>
+      <iframe class="cv-embed" src="cv.pdf" title="Cyrus Khalvati CV"></iframe>
     </div>
   </section>
 
@@ -443,6 +505,12 @@
     document.getElementById('page-' + name).classList.add('active');
     document.getElementById('link-' + name).classList.add('active');
     window.scrollTo(0, 0);
+  }
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
   }
 </script>
 </body>
