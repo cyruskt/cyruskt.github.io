@@ -111,7 +111,7 @@
     }
     .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-    .profile-name { font-size: 36px; font-weight: 300; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
+    .profile-name { font-size: 42px; font-weight: 300; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
     .profile-role { font-size: 17px; font-weight: 400; color: var(--muted); margin-bottom: 3px; }
     .profile-uni { font-size: 17px; font-weight: 400; color: var(--accent); margin-bottom: 1.4rem; }
 
@@ -170,11 +170,26 @@
     .paper-sub li strong { color: var(--text); font-weight: 500; }
     .paper-abstract { font-size: 15px; line-height: 1.8; color: var(--muted); margin-top: 10px; padding-left: 1rem; border-left: 3px solid var(--border); }
 
+    .teach-intro { font-size: 18px; line-height: 1.8; color: var(--text); margin-bottom: 2rem; }
     .teach-section-title { font-size: 18px; font-weight: 700; margin-bottom: 0.75rem; margin-top: 1.75rem; color: var(--text); }
     .teach-section-title:first-of-type { margin-top: 0; }
     ul.teach-list { list-style: none; padding-left: 0; margin-bottom: 1.75rem; }
     ul.teach-list > li { font-size: 19px; margin-bottom: 0.75rem; }
     ul.teach-list > li .teach-sub { font-size: 15px; color: var(--muted); margin-top: 3px; display: block; }
+
+    .quote-list { list-style: none; padding-left: 0; margin-bottom: 1.75rem; }
+    .quote-list li {
+      font-size: 17px;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.7;
+      padding: 1rem 0 1rem 1.25rem;
+      border-left: 3px solid var(--accent);
+      margin-bottom: 1rem;
+      background: var(--bg2);
+      padding-right: 1.25rem;
+      border-radius: 0 4px 4px 0;
+    }
 
     .cv-page-wrap { max-width: 900px; }
     .cv-page-header {
@@ -222,7 +237,7 @@
     @media (max-width: 860px) {
       .home-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .avatar-circle { width: 220px; height: 220px; }
-      .profile-name { font-size: 28px; }
+      .profile-name { font-size: 32px; }
       .interests-edu-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       nav { padding: 0 1rem; }
@@ -301,7 +316,8 @@
         <p class="bio-text">Hi! My name is Cyrus, I am a Ph.D. candidate in Management at the <a href="https://business.missouri.edu/">Trulaske College of Business</a> at the <a href="https://missouri.edu/">University of Missouri</a>.</p>
         <p class="bio-text">My research examines how the design of human resource practices both predicts and shapes performance outcomes at employee and firm levels. My work has been invited for revision at the <em><strong>Journal of Applied Psychology</strong></em> and <em><strong>Personnel Psychology</strong></em>.</p>
         <p class="bio-text">I completed my undergraduate studies in <a href="https://www.cntraveller.com/gallery/vancouver-canada-best-things-to-do">Vancouver, Canada</a>, where I was born and raised. As a Canadian, I am <strong>eligible for TN status</strong> for employment in the U.S. and <strong>do not require H1-B sponsorship</strong>.</p>
-        <p class="bio-text">Outside of research and teaching, I enjoy playing basketball, watching professional Esports, and spending time with friends and family.</p>
+        <p class="bio-text">Outside of research and teaching, I enjoy playing basketball and spending time with family.</p>
+        <p class="bio-text">I am also highly engaged with the professional Esports scene.</p>
         <p class="cv-inline-link">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -418,31 +434,27 @@
   <section id="page-teaching" class="page">
     <div class="inner-wrap">
       <h1 class="page-title">Teaching</h1>
+      <p class="teach-intro">Teaching is an incredibly important part of my scholarly identity. It is an opportunity for me to connect with bright, ambitious students and share meaningful knowledge that not only prepares them professionally, but also helps them grow as thoughtful and capable individuals in their personal lives.</p>
       <p class="teach-section-title">Instructor</p>
       <ul class="teach-list">
         <li>
           MGMT 4030/7030 – Organizational Behavior (4.8/5) · Fall 2025
-          <span class="teach-sub"><a href="Fall 2025 Evaluations - Cyrus Khalvati.pdf">Download Fall 2025 Evaluations</a></span>
+          <span class="teach-sub"><a href="Fall 2025 Evaluations - Cyrus Khalvati.pdf">View Evaluations for Fall 2025</a></span>
         </li>
         <li>
           MGMT 4030/7030 – Organizational Behavior (4.8/5) · Spring 2025
-          <span class="teach-sub"><a href="Spring 2025 Evaluations - Cyrus Khalvati.pdf">Download Spring 2025 Evaluations</a></span>
+          <span class="teach-sub"><a href="Spring 2025 Evaluations - Cyrus Khalvati.pdf">View Evaluations for Spring 2025</a></span>
         </li>
         <li>
           MGMT 4030/7030 – Organizational Behavior (4.7/5) · Fall 2024
-          <span class="teach-sub"><a href="Fall 2024 Evaluations - Cyrus Khalvati.pdf">Download Fall 2024 Evaluations</a></span>
+          <span class="teach-sub"><a href="Fall 2024 Evaluations - Cyrus Khalvati.pdf">View Evaluations for Fall 2024</a></span>
         </li>
       </ul>
       <p class="teach-section-title">Student Comments</p>
-      <ul class="teach-list">
-        <li>
-          MGMT 6200 – Strategic Management (MBA) · Spring 2023
-          <span class="teach-sub">Professor Placeholder Name</span>
-        </li>
-        <li>
-          MGMT 3100 – Introduction to Management · Fall 2022
-          <span class="teach-sub">Professor Placeholder Name</span>
-        </li>
+      <ul class="quote-list">
+        <li>"Cyrus is an amazing educator. The course content is extremely interesting... and Cyrus does an amazing job at showing the students how the content is applicable to daily life and work. I was able to understand my peers' beliefs in a deep way by working with them on several assignments."</li>
+        <li>"He has been one of my favorite professors at Mizzou... His teaching style is very engaging and collaborative."</li>
+        <li>"Cyrus applied the concepts from class to real life scenarios or popular movies/shows that helped me understand."</li>
       </ul>
     </div>
   </section>
