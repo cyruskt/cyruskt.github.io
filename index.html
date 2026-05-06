@@ -163,7 +163,7 @@
     h2.res-section:first-of-type { margin-top: 0; }
     ol.paper-ol { padding-left: 1.5rem; }
     ol.paper-ol > li { margin-bottom: 2rem; font-size: 19px; }
-    .paper-title-link { font-weight: 500; color: var(--accent); font-size: 19px; }
+    .paper-title { font-weight: 500; color: var(--text); font-size: 19px; }
     .paper-sub { list-style: none; padding-left: 0; margin-top: 6px; }
     .paper-sub li { font-size: 15px; color: var(--muted); padding: 2px 0 2px 1rem; position: relative; }
     .paper-sub li::before { content: '·'; position: absolute; left: 0; color: var(--light); }
@@ -214,6 +214,7 @@
     .form-row textarea { height: 130px; resize: vertical; }
     .form-submit { padding: 9px 24px; background: var(--accent); border: none; border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; color: #fff; transition: opacity 0.15s; }
     .form-submit:hover { opacity: 0.85; }
+    .form-note { font-size: 13px; color: var(--muted); margin-top: 0.75rem; }
 
     footer { text-align: center; padding: 2rem; font-size: 13px; color: var(--light); border-top: 1px solid var(--border); margin-top: 2rem; }
     footer a { color: var(--light); }
@@ -283,7 +284,7 @@
           <a class="social-icon linkedin" href="#" title="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <a class="social-icon scholar" href="#" title="Google Scholar">
+          <a class="social-icon scholar" href="https://scholar.google.com/citations?user=-6ebuSEAAAAJ&hl=en" title="Google Scholar">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18V17c0 .88.39 1.67 1 2.22L12 22l6-2.78c.61-.55 1-1.34 1-2.22v-5.82L21 9l-9-6zM18 9l-6 3.27L6 9l6-3.27L18 9zM7 14.45v-3.27l5 2.73 5-2.73v3.27L12 17.27l-5-2.82z"/></svg>
           </a>
           <a class="social-icon email" href="mailto:cyruskhalvati@missouri.edu" title="Email">
@@ -358,19 +359,18 @@
       <h2 class="res-section">Under Review</h2>
       <ol class="paper-ol">
         <li>
-          <a class="paper-title-link" href="paper1.pdf">"Working Smarter, Not Longer, When Time is Limited: Work-Hour Restrictions, Pay-for-Performance, and Firm-level Productivity"</a>
+          <span class="paper-title">"Working Smarter, Not Longer, When Time is Limited: Work-Hour Restrictions, Pay-for-Performance, and Firm-level Productivity"</span>
           <ul class="paper-sub">
-            <li>With <a href="#">Joonyoung Kim</a></li>
-            <li>3rd round R&R at <strong>Journal of Applied Psychology</strong></li>
-            <li>See the <a href="#">slides</a></li>
+            <li>With <a href="https://business.missouri.edu/directory/kim-1">Joonyoung Kim</a></li>
+            <li>2nd round revise-and-resubmit at <strong>Journal of Applied Psychology</strong></li>
           </ul>
           <p class="paper-abstract">We study how work-hour restrictions affect firm productivity using panel data of 514 firm-year observations from 251 firms under Korea's 52-hour policy. Firms experience productivity declines after the policy, driven by disrupted effort–performance expectations when duration-based work is constrained. Firms subject to the policy show negative average productivity effects in the initial period. Due to limited working time, employees must shift from duration-based to intensity-based effort. Firms with stronger performance-based pay show weaker productivity losses because incentives strengthen performance–reward linkages and motivate this adjustment.</p>
         </li>
         <li>
-          <a class="paper-title-link" href="paper2.pdf">"Shared Adversity, Greater Effort: How Hyperinflation Alters the Meaning and Motivational Influence of Economic Hardship"</a>
+          <span class="paper-title">"Shared Adversity, Greater Effort: How Hyperinflation Alters the Meaning and Motivational Influence of Economic Hardship"</span>
           <ul class="paper-sub">
-            <li>With <a href="#">John Schaubroeck, Ann Peng, & Ozgur Demirtas</a></li>
-            <li>3rd round R&R at <strong>Personnel Psychology</strong></li>
+            <li>With <a href="https://business.missouri.edu/directory/schaubroeck">John Schaubroeck</a>, <a href="https://business.missouri.edu/directory/peng">Ann Peng</a>, &amp; <a href="https://avesis.kayseri.edu.tr/ozgurdemirtas">Ozgur Demirtas</a></li>
+            <li>2nd round revise-and-resubmit at <strong>Personnel Psychology</strong></li>
           </ul>
           <p class="paper-abstract">We study how economic hardship affects employee work effort using a field sample of 409 healthcare employees in Türkiye during a period of extreme inflation (~85%) and two experiments. Employees typically reduce effort under hardship, driven by cognitive strain and self-focused concerns, but maintain effort when hardship is widely shared during hyperinflation. Workers experiencing worsening hardship show no decline in effort in the field and weaker negative effects in experiments under hyperinflation. Due to shared economic conditions, individuals shift toward a salient social identity that emphasizes role obligations. This sustains work effort and links to higher job performance among those high in perspective taking.</p>
         </li>
@@ -379,33 +379,33 @@
       <h2 class="res-section">Working Papers</h2>
       <ol class="paper-ol">
         <li>
-          <a class="paper-title-link" href="paper3.pdf">"Does the 'Why' Matter? Differences in Replacement vs. Expansion Hiring"</a>
+          <span class="paper-title">"Does the 'Why' Matter? Differences in Replacement vs. Expansion Hiring"</span>
           <ul class="paper-sub">
-            <li>With <a href="#">John Arnold, Joonyoung Kim, & Talya Bauer</a></li>
+            <li>With <a href="https://business.missouri.edu/directory/arnold">John Arnold</a>, <a href="https://business.missouri.edu/directory/kim-1">Joonyoung Kim</a>, &amp; <a href="https://www.pdx.edu/profile/talya-bauer">Talya Bauer</a></li>
             <li>Preparing to submit: <strong>Journal of Applied Psychology</strong></li>
           </ul>
           <p class="paper-abstract">We study how hiring context (expansion vs. replacement) affects new hire quality and turnover using archival data from 8,198 call center employees at a U.S. telecommunications firm (2018–2020). Expansion hires score higher on selection assessments, indicating better average applicant quality, while replacement hires show lower scores across performance-related constructs. Replacement hires also exhibit higher turnover risk (about 17% higher hazard), and overall turnover in the sample is high (50.7%). Due to differences in hiring context, replacement roles appear harder to fill with high-quality candidates, contributing to worse outcomes.</p>
         </li>
         <li>
-          <a class="paper-title-link" href="paper4.pdf">"What Does Behavioral Consistency Really Mean? A Meta-analysis of Method Factors and Outcomes in Employee Selection"</a>
+          <span class="paper-title">"What Does Behavioral Consistency Really Mean? A Meta-analysis of Method Factors and Outcomes in Employee Selection"</span>
           <ul class="paper-sub">
-            <li>With <a href="#">John Arnold, Chad van Iddekinge, & Filip Lievens</a></li>
+            <li>With <a href="https://business.missouri.edu/directory/arnold">John Arnold</a>, <a href="https://tippie.uiowa.edu/people/chad-vaniddekinge">Chad van Iddekinge</a>, &amp; <a href="https://faculty.smu.edu.sg/profile/lievens-filip-1871">Filip Lievens</a></li>
             <li>Target: <strong>Journal of Applied Psychology</strong></li>
           </ul>
           <p class="paper-abstract">We study behavioral consistency in employee selection, conducting a meta-analysis of 67 studies (78 samples; N = 26,377) covering procedures like assessment centers, work samples, and behavioral interviews. These methods are assumed to predict performance because past or simulated behavior reflects future job behavior, but theory used to develop these predictions are inconsistently applied. Across studies, behavioral consistency procedures show moderate predictive validity (≈ .35), with substantial variation across implementations. Procedures with higher construct consistency show stronger validity (≈ .42 vs .25 when low), indicating that how consistency is implemented matters for prediction.</p>
         </li>
         <li>
-          <a class="paper-title-link" href="paper5.pdf">"Managing Pay Dispersion in Flatter Organizational Hierarchies"</a>
+          <span class="paper-title">"Managing Pay Dispersion in Flatter Organizational Hierarchies"</span>
           <ul class="paper-sub">
-            <li>With <a href="#">Joonyoung Kim</a></li>
+            <li>With <a href="https://business.missouri.edu/directory/kim-1">Joonyoung Kim</a></li>
             <li>Target: <strong>Journal of Applied Psychology</strong></li>
           </ul>
           <p class="paper-abstract">We study how flattening organizational hierarchy shapes the effects of vertical and horizontal pay dispersion on firm-level labor productivity using a quasi-experimental firm setting. Firms that flatten hierarchy weaken the productivity benefits of vertical pay dispersion, driven by the loss of clear promotion ladders that make tournament incentives meaningful. At the same time, flattening strengthens the positive association between horizontal pay dispersion and firm productivity because pay differences become more visible and trigger sorting, where lower-paid (and lower-performing) employees exit.</p>
         </li>
         <li>
-          <a class="paper-title-link" href="paper6.pdf">"A Theoretical Investigation of Performance Improvement Plans"</a>
+          <span class="paper-title">"A Theoretical Investigation of Performance Improvement Plans"</span>
           <ul class="paper-sub">
-            <li>With <a href="#">John Schaubroeck</a></li>
+            <li>With <a href="https://business.missouri.edu/directory/schaubroeck">John Schaubroeck</a></li>
             <li>Target: <strong>Personnel Psychology</strong></li>
           </ul>
           <p class="paper-abstract">We study how employees interpret and respond to Performance Improvement Plans (PIPs), focusing on how social context shapes their meaning and attribution in organizations. We offer that employees form expectations about whether improvement is possible and whether termination is likely, based on cues from peers and supervisors. Peer information signals whether others improve or are terminated, while supervisor framing shapes how those signals are interpreted. When employees expect improvement to be attainable, they engage more with work, whereas expectations of inevitable termination lead to withdrawal behaviors like turnover intentions and job search.</p>
@@ -421,15 +421,15 @@
       <p class="teach-section-title">Instructor</p>
       <ul class="teach-list">
         <li>
-          MGMT 4030 – Organizational Behavior (4.8/5) · Fall 2025
+          MGMT 4030/7030 – Organizational Behavior (4.8/5) · Fall 2025
           <span class="teach-sub"><a href="Fall 2025 Evaluations - Cyrus Khalvati.pdf">Download Fall 2025 Evaluations</a></span>
         </li>
         <li>
-          MGMT 4030 – Organizational Behavior (4.8/5) · Spring 2025
+          MGMT 4030/7030 – Organizational Behavior (4.8/5) · Spring 2025
           <span class="teach-sub"><a href="Spring 2025 Evaluations - Cyrus Khalvati.pdf">Download Spring 2025 Evaluations</a></span>
         </li>
         <li>
-          MGMT 4030 – Organizational Behavior (4.7/5) · Fall 2024
+          MGMT 4030/7030 – Organizational Behavior (4.7/5) · Fall 2024
           <span class="teach-sub"><a href="Fall 2024 Evaluations - Cyrus Khalvati.pdf">Download Fall 2024 Evaluations</a></span>
         </li>
       </ul>
@@ -473,14 +473,15 @@
         <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:cyruskhalvati@missouri.edu">cyruskhalvati@missouri.edu</a></div></div>
         <div><div class="contact-label">Office</div><div class="contact-val">509 Cornell Hall<br>Trulaske College of Business<br>Columbia, MO 65211</div></div>
         <div><div class="contact-label">Mailing Address</div><div class="contact-val">Department of Management<br>University of Missouri<br>Columbia, MO 65211</div></div>
-        <div><div class="contact-label">Links</div><div class="contact-val"><a href="#">LinkedIn</a><br><a href="#">Google Scholar</a><br><a href="https://orcid.org/0009-0009-5330-5573">ORCID</a></div></div>
+        <div><div class="contact-label">Links</div><div class="contact-val"><a href="#">LinkedIn</a><br><a href="https://scholar.google.com/citations?user=-6ebuSEAAAAJ&hl=en">Google Scholar</a><br><a href="https://orcid.org/0009-0009-5330-5573">ORCID</a></div></div>
       </div>
       <p class="form-title">Send a Message</p>
-      <form onsubmit="return false;">
-        <div class="form-row"><label>Name</label><input type="text" placeholder="Your name" /></div>
-        <div class="form-row"><label>Email</label><input type="email" placeholder="your@email.com" /></div>
-        <div class="form-row"><label>Message</label><textarea placeholder="Your message..."></textarea></div>
+      <form id="contact-form" onsubmit="return sendMessage(event);">
+        <div class="form-row"><label>Name</label><input type="text" id="msg-name" placeholder="Your name" required /></div>
+        <div class="form-row"><label>Email</label><input type="email" id="msg-email" placeholder="your@email.com" required /></div>
+        <div class="form-row"><label>Message</label><textarea id="msg-body" placeholder="Your message..." required></textarea></div>
         <button class="form-submit" type="submit">Send</button>
+        <p class="form-note">Clicking Send will open your email app with the message pre-filled, addressed to me.</p>
       </form>
     </div>
   </section>
@@ -505,6 +506,19 @@
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
+  }
+
+  function sendMessage(event) {
+    event.preventDefault();
+    const name = document.getElementById('msg-name').value;
+    const email = document.getElementById('msg-email').value;
+    const body = document.getElementById('msg-body').value;
+    const subject = encodeURIComponent('Website message from ' + name);
+    const emailBody = encodeURIComponent(
+      'From: ' + name + ' (' + email + ')\n\n' + body
+    );
+    window.location.href = 'mailto:cyruskhalvati@missouri.edu?subject=' + subject + '&body=' + emailBody;
+    return false;
   }
 </script>
 </body>
