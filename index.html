@@ -60,7 +60,7 @@
     nav {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1.25rem;
+      padding: 0 0.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -91,29 +91,29 @@
     [data-theme="dark"] .theme-toggle .moon-icon { display: none; }
     [data-theme="dark"] .theme-toggle .sun-icon { display: block; }
 
-    .site-wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem 6rem; }
+    .site-wrap { max-width: 1200px; margin: 0 auto; padding: 0 0.5rem 6rem; }
     .page { display: none; padding-top: 4rem; }
     .page.active { display: block; }
     #page-research, #page-teaching, #page-cv, #page-contact { padding-top: 2rem; }
 
     .home-layout {
       display: grid;
-      grid-template-columns: 320px 1fr;
+      grid-template-columns: 360px 1fr;
       gap: 4.5rem;
       align-items: start;
     }
 
     .profile-left { display: flex; flex-direction: column; align-items: center; text-align: center; }
     .avatar-circle {
-      width: 300px; height: 300px; border-radius: 50%; overflow: hidden;
+      width: 340px; height: 340px; border-radius: 50%; overflow: hidden;
       background: #cdd5ea; display: flex; align-items: center; justify-content: center;
       font-size: 14px; color: var(--light); margin-bottom: 1.5rem; flex-shrink: 0;
     }
     .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-    .profile-name { font-size: 42px; font-weight: 300; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
+    .profile-name { font-size: 48px; font-weight: 300; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
     .profile-role { font-size: 17px; font-weight: 400; color: var(--muted); margin-bottom: 3px; }
-    .profile-uni { font-size: 17px; font-weight: 400; color: var(--accent); margin-bottom: 1.4rem; }
+    .profile-uni { font-size: 17px; font-weight: 400; color: var(--muted); margin-bottom: 1.4rem; }
 
     .social-row { display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; }
     .social-icon {
@@ -236,13 +236,13 @@
 
     @media (max-width: 860px) {
       .home-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      .avatar-circle { width: 220px; height: 220px; }
-      .profile-name { font-size: 32px; }
+      .avatar-circle { width: 240px; height: 240px; }
+      .profile-name { font-size: 36px; }
       .interests-edu-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
-      nav { padding: 0 1rem; }
+      nav { padding: 0 0.5rem; }
       .nav-links a { padding: 0 10px; font-size: 13px; }
-      .site-wrap { padding: 0 1rem 4rem; }
+      .site-wrap { padding: 0 0.75rem 4rem; }
       .page { padding-top: 2.5rem; }
       #page-research, #page-teaching, #page-cv, #page-contact { padding-top: 1.5rem; }
       .bio-heading, h1.page-title { font-size: 32px; }
@@ -371,13 +371,13 @@
     <div class="inner-wrap">
       <h1 class="page-title">Research</h1>
 
-      <h2 class="res-section">Under Review</h2>
+      <h2 class="res-section">Revise and Resubmit</h2>
       <ol class="paper-ol">
         <li>
           <span class="paper-title">"Working Smarter, Not Longer, When Time is Limited: Work-Hour Restrictions, Pay-for-Performance, and Firm-level Productivity"</span>
           <ul class="paper-sub">
             <li>With <a href="https://business.missouri.edu/directory/kim-1">Joonyoung Kim</a></li>
-            <li>2nd round revise-and-resubmit at <strong>Journal of Applied Psychology</strong></li>
+            <li>Under 3rd round review at <strong>Journal of Applied Psychology</strong></li>
           </ul>
           <p class="paper-abstract">We study how work-hour restrictions affect firm productivity using panel data of 514 firm-year observations from 251 firms under Korea's 52-hour policy. Firms experience productivity declines after the policy, driven by disrupted effort–performance expectations when duration-based work is constrained. Firms subject to the policy show negative average productivity effects in the initial period. Due to limited working time, employees must shift from duration-based to intensity-based effort. Firms with stronger performance-based pay show weaker productivity losses because incentives strengthen performance–reward linkages and motivate this adjustment.</p>
         </li>
@@ -385,7 +385,7 @@
           <span class="paper-title">"Shared Adversity, Greater Effort: How Hyperinflation Alters the Meaning and Motivational Influence of Economic Hardship"</span>
           <ul class="paper-sub">
             <li>With <a href="https://business.missouri.edu/directory/schaubroeck">John Schaubroeck</a>, <a href="https://business.missouri.edu/directory/peng">Ann Peng</a>, &amp; <a href="https://avesis.kayseri.edu.tr/ozgurdemirtas">Ozgur Demirtas</a></li>
-            <li>2nd round revise-and-resubmit at <strong>Personnel Psychology</strong></li>
+            <li>Under 3rd round review at <strong>Personnel Psychology</strong></li>
           </ul>
           <p class="paper-abstract">We study how economic hardship affects employee work effort using a field sample of 409 healthcare employees in Türkiye during a period of extreme inflation (~85%) and two experiments. Employees typically reduce effort under hardship, driven by cognitive strain and self-focused concerns, but maintain effort when hardship is widely shared during hyperinflation. Workers experiencing worsening hardship show no decline in effort in the field and weaker negative effects in experiments under hyperinflation. Due to shared economic conditions, individuals shift toward a salient social identity that emphasizes role obligations. This sustains work effort and links to higher job performance among those high in perspective taking.</p>
         </li>
@@ -404,7 +404,7 @@
         <li>
           <span class="paper-title">"What Does Behavioral Consistency Really Mean? A Meta-analysis of Method Factors and Outcomes in Employee Selection"</span>
           <ul class="paper-sub">
-            <li>With <a href="https://business.missouri.edu/directory/arnold">John Arnold</a>, <a href="https://tippie.uiowa.edu/people/chad-vaniddekinge">Chad van Iddekinge</a>, &amp; <a href="https://faculty.smu.edu.sg/profile/lievens-filip-1871">Filip Lievens</a></li>
+            <li>With <a href="https://business.missouri.edu/directory/arnold">John Arnold</a>, <a href="https://tippie.uiowa.edu/people/chad-vaniddekinge">Chad Van Iddekinge</a>, &amp; <a href="https://faculty.smu.edu.sg/profile/lievens-filip-1871">Filip Lievens</a></li>
             <li>Target: <strong>Journal of Applied Psychology</strong></li>
           </ul>
           <p class="paper-abstract">We study behavioral consistency in employee selection, conducting a meta-analysis of 67 studies (78 samples; N = 26,377) covering procedures like assessment centers, work samples, and behavioral interviews. These methods are assumed to predict performance because past or simulated behavior reflects future job behavior, but theory used to develop these predictions are inconsistently applied. Across studies, behavioral consistency procedures show moderate predictive validity (≈ .35), with substantial variation across implementations. Procedures with higher construct consistency show stronger validity (≈ .42 vs .25 when low), indicating that how consistency is implemented matters for prediction.</p>
@@ -436,6 +436,10 @@
       <p class="teach-intro">Teaching is an incredibly important part of my scholarly identity. It is an opportunity for me to connect with bright, ambitious students and share meaningful knowledge that not only prepares them professionally, but also helps them grow as thoughtful and capable individuals in their personal lives.</p>
       <p class="teach-section-title">Instructor</p>
       <ul class="teach-list">
+        <li>
+          MGMT 4030/7030 – Organizational Behavior (4.8/5) · Spring 2026
+          <span class="teach-sub"><a href="Spring 2026 Evaluations - Cyrus Khalvati.pdf">View Evaluations for Spring 2026</a></span>
+        </li>
         <li>
           MGMT 4030/7030 – Organizational Behavior (4.8/5) · Fall 2025
           <span class="teach-sub"><a href="Fall 2025 Evaluations - Cyrus Khalvati.pdf">View Evaluations for Fall 2025</a></span>
