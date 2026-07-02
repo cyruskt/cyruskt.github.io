@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyrus Khalvati</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23000' d='M32 8 4 22l28 14 28-14L32 8z'/%3E%3Cpath fill='%23000' d='M16 31v12c0 5 32 5 32 0V31L32 39 16 31z'/%3E%3Cpath stroke='%23fff' stroke-width='4' stroke-linecap='round' d='M52 25v15'/%3E%3Ccircle cx='52' cy='45' r='4' fill='%23fff'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
@@ -37,7 +38,7 @@
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       font-size: 19px;
@@ -57,6 +58,7 @@
       z-index: 200;
       transition: background 0.2s, border-color 0.2s;
     }
+
     nav {
       max-width: 1200px;
       margin: 0 auto;
@@ -66,35 +68,82 @@
       justify-content: space-between;
       height: 60px;
     }
-    .nav-name { font-size: 22px; font-weight: 700; color: var(--text); text-decoration: none; }
+
+    .nav-name {
+      font-size: 25px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
     .nav-right { display: flex; align-items: center; }
     .nav-links { list-style: none; display: flex; }
+
     .nav-links a {
-      font-size: 15px; font-weight: 400; color: var(--muted);
-      text-decoration: none; padding: 0 14px; height: 60px;
-      display: flex; align-items: center; transition: color 0.15s;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0 14px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      transition: color 0.15s;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
 
     .theme-toggle {
-      background: none; border: none; cursor: pointer;
-      padding: 8px; margin-left: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      margin-left: 8px;
       color: var(--muted);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
       transition: color 0.15s, background 0.15s;
     }
-    .theme-toggle:hover { color: var(--text); background: var(--bg2); }
-    .theme-toggle svg { width: 20px; height: 20px; }
+
+    .theme-toggle:hover {
+      color: var(--text);
+      background: var(--bg2);
+    }
+
+    .theme-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
     .theme-toggle .moon-icon { display: block; }
     .theme-toggle .sun-icon { display: none; }
     [data-theme="dark"] .theme-toggle .moon-icon { display: none; }
     [data-theme="dark"] .theme-toggle .sun-icon { display: block; }
 
-    .site-wrap { max-width: 1200px; margin: 0 auto; padding: 0 0.5rem 6rem; }
-    .page { display: none; padding-top: 4rem; }
+    .site-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 0.5rem 6rem;
+    }
+
+    .page {
+      display: none;
+      padding-top: 4rem;
+    }
+
     .page.active { display: block; }
-    #page-research, #page-teaching, #page-cv, #page-contact { padding-top: 2rem; }
+
+    #page-research,
+    #page-teaching,
+    #page-cv,
+    #page-contact {
+      padding-top: 2rem;
+    }
 
     .home-layout {
       display: grid;
@@ -103,33 +152,102 @@
       align-items: start;
     }
 
-    .profile-left { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .profile-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
     .avatar-circle {
-      width: 340px; height: 340px; border-radius: 50%; overflow: hidden;
-      background: #cdd5ea; display: flex; align-items: center; justify-content: center;
-      font-size: 14px; color: var(--light); margin-bottom: 1.5rem; flex-shrink: 0;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #cdd5ea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--light);
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
     }
-    .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-    .profile-name { font-size: 48px; font-weight: 300; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
-    .profile-role { font-size: 17px; font-weight: 400; color: var(--muted); margin-bottom: 3px; }
-    .profile-uni { font-size: 17px; font-weight: 400; color: var(--muted); margin-bottom: 1.4rem; }
+    .avatar-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-    .social-row { display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .profile-name {
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .profile-role {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .profile-uni {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
     .social-icon {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 36px; height: 36px; border-radius: 5px; color: #fff;
-      text-decoration: none; transition: opacity 0.15s; flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 5px;
+      color: #fff;
+      text-decoration: none;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
     }
-    .social-icon:hover { opacity: 0.82; text-decoration: none; }
+
+    .social-icon:hover {
+      opacity: 0.82;
+      text-decoration: none;
+    }
+
     .social-icon.linkedin { background: #0077b5; }
     .social-icon.scholar  { background: #4285f4; }
     .social-icon.email    { background: #5f6368; }
     .social-icon.orcid    { background: #a6ce39; }
     .social-icon svg { width: 19px; height: 19px; }
 
-    .bio-heading { font-size: 44px; font-weight: 300; color: var(--text); margin-bottom: 1.25rem; line-height: 1.15; }
-    .bio-text { font-size: 19px; line-height: 1.8; color: var(--text); margin-bottom: 1rem; }
+    .bio-heading {
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .bio-text {
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
 
     .cv-inline-link {
       display: inline-flex;
@@ -139,70 +257,215 @@
       color: var(--text);
       margin-top: 0.5rem;
     }
+
     .cv-inline-link svg { color: var(--text); }
     .cv-inline-link a { color: var(--accent); }
 
-    .interests-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2.5rem; }
-    .sub-section-title { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
-    .dot-list { list-style: disc; padding-left: 1.4rem; }
-    .dot-list li { font-size: 17px; padding: 3px 0; color: var(--text); }
+    .interests-edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 2.35rem;
+    }
+
+    .sub-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .dot-list {
+      list-style: disc;
+      padding-left: 1.4rem;
+    }
+
+    .dot-list li {
+      font-size: 17px;
+      padding: 3px 0;
+      color: var(--text);
+    }
+
     .edu-list { list-style: none; }
-    .edu-list li { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0.75rem; }
-    .edu-icon { font-size: 17px; flex-shrink: 0; line-height: 1.6; }
-    .edu-degree { font-size: 17px; font-weight: 400; color: var(--text); display: block; }
-    .edu-school { font-size: 13px; color: var(--muted); display: block; margin-top: 1px; }
+
+    .edu-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 0.75rem;
+    }
+
+    .edu-icon {
+      font-size: 17px;
+      flex-shrink: 0;
+      line-height: 1.6;
+    }
+
+    .edu-degree {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text);
+      display: block;
+    }
+
+    .edu-school {
+      font-size: 13px;
+      color: var(--muted);
+      display: block;
+      margin-top: 1px;
+    }
 
     .inner-wrap { max-width: 860px; }
-    h1.page-title { font-size: 44px; font-weight: 300; margin-bottom: 1.5rem; color: var(--text); }
+
+    h1.page-title {
+      font-size: 44px;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
 
     h2.res-section {
-      font-size: 20px; font-weight: 700; color: var(--text);
-      margin-top: 2rem; margin-bottom: 1rem;
-      padding-bottom: 6px; border-bottom: 1px solid var(--border);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
     }
+
     h2.res-section:first-of-type { margin-top: 0; }
+
     ol.paper-ol { padding-left: 1.5rem; }
-    ol.paper-ol > li { margin-bottom: 2rem; font-size: 19px; }
-    .paper-title { font-weight: 500; color: var(--text); font-size: 19px; }
-    .paper-sub { list-style: none; padding-left: 0; margin-top: 6px; }
-    .paper-sub li { font-size: 15px; color: var(--muted); padding: 2px 0 2px 1rem; position: relative; }
-    .paper-sub li::before { content: '·'; position: absolute; left: 0; color: var(--light); }
-    .paper-sub li strong { color: var(--text); font-weight: 500; }
-    .paper-abstract { font-size: 15px; line-height: 1.8; color: var(--muted); margin-top: 10px; padding-left: 1rem; border-left: 3px solid var(--border); }
 
-    .teach-intro { font-size: 18px; line-height: 1.8; color: var(--text); margin-bottom: 2rem; }
-    .teach-section-title { font-size: 18px; font-weight: 700; margin-bottom: 0.75rem; margin-top: 1.75rem; color: var(--text); }
+    ol.paper-ol > li {
+      margin-bottom: 2rem;
+      font-size: 19px;
+    }
+
+    .paper-title {
+      font-weight: 500;
+      color: var(--text);
+      font-size: 19px;
+    }
+
+    .paper-sub {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 6px;
+    }
+
+    .paper-sub li {
+      font-size: 15px;
+      color: var(--muted);
+      padding: 2px 0 2px 1rem;
+      position: relative;
+    }
+
+    .paper-sub li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--light);
+    }
+
+    .paper-sub li strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .paper-abstract {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-top: 10px;
+      padding-left: 1rem;
+      border-left: 3px solid var(--border);
+    }
+
+    .teach-intro {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+
+    .teach-section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      margin-top: 1.75rem;
+      color: var(--text);
+    }
+
     .teach-section-title:first-of-type { margin-top: 0; }
-    ul.teach-list { list-style: none; padding-left: 0; margin-bottom: 1.75rem; }
-    ul.teach-list > li { font-size: 19px; margin-bottom: 0.75rem; }
-    ul.teach-list > li .teach-sub { font-size: 15px; color: var(--muted); margin-top: 3px; display: block; }
 
-    .quote-list { list-style: none; padding-left: 0; margin-bottom: 1.75rem; }
+    ul.teach-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1.75rem;
+    }
+
+    ul.teach-list > li {
+      font-size: 19px;
+      margin-bottom: 0.75rem;
+    }
+
+    ul.teach-list > li .teach-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 3px;
+      display: block;
+    }
+
+    .quote-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1.75rem;
+    }
+
     .quote-list li {
       font-size: 17px;
       font-style: italic;
       color: var(--text);
       line-height: 1.7;
-      padding: 1rem 0 1rem 1.25rem;
+      padding: 1rem 1.25rem 1rem 1.25rem;
       border-left: 3px solid var(--accent);
       margin-bottom: 1rem;
       background: var(--bg2);
-      padding-right: 1.25rem;
       border-radius: 0 4px 4px 0;
     }
 
     .cv-page-wrap { max-width: 900px; }
+
     .cv-page-header {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
+
     .cv-dl-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 15px; font-weight: 500; color: #fff;
-      background: var(--accent); border-radius: 3px;
-      padding: 8px 18px; text-decoration: none; transition: opacity 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 3px;
+      padding: 8px 18px;
+      text-decoration: none;
+      transition: opacity 0.15s;
     }
-    .cv-dl-btn:hover { opacity: 0.85; text-decoration: none; }
+
+    .cv-dl-btn:hover {
+      opacity: 0.85;
+      text-decoration: none;
+    }
+
     .cv-embed {
       width: 100%;
       height: 85vh;
@@ -211,41 +474,146 @@
       background: var(--bg);
     }
 
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; max-width: 700px; }
-    .contact-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 6px; }
-    .contact-val { font-size: 16px; line-height: 1.7; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .contact-val {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
     .contact-val a { color: var(--accent); }
-    .form-title { font-size: 19px; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+    .form-title {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
     .form-row { margin-bottom: 1rem; }
-    .form-row label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 4px; font-weight: 500; }
-    .form-row input, .form-row textarea {
-      width: 100%; max-width: 540px; padding: 9px 12px;
-      border: 1px solid var(--border); border-radius: 3px;
-      font-family: 'Roboto', sans-serif; font-size: 15px;
-      color: var(--text); background: var(--bg); outline: none;
+
+    .form-row label {
+      display: block;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .form-row input,
+    .form-row textarea {
+      width: 100%;
+      max-width: 540px;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
       transition: border-color 0.15s;
     }
-    .form-row input:focus, .form-row textarea:focus { border-color: var(--accent); }
-    .form-row textarea { height: 130px; resize: vertical; }
-    .form-submit { padding: 9px 24px; background: var(--accent); border: none; border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; color: #fff; transition: opacity 0.15s; }
-    .form-submit:hover { opacity: 0.85; }
-    .form-note { font-size: 13px; color: var(--muted); margin-top: 0.75rem; }
 
-    footer { text-align: center; padding: 2rem; font-size: 13px; color: var(--light); border-top: 1px solid var(--border); margin-top: 2rem; }
+    .form-row input:focus,
+    .form-row textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-row textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      padding: 9px 24px;
+      background: var(--accent);
+      border: none;
+      border-radius: 3px;
+      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      color: #fff;
+      transition: opacity 0.15s;
+    }
+
+    .form-submit:hover { opacity: 0.85; }
+
+    .form-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 13px;
+      color: var(--light);
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
     footer a { color: var(--light); }
 
     @media (max-width: 860px) {
-      .home-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      .avatar-circle { width: 240px; height: 240px; }
+      .home-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .avatar-circle {
+        width: 240px;
+        height: 240px;
+      }
+
       .profile-name { font-size: 36px; }
+
       .interests-edu-grid { grid-template-columns: 1fr; }
+
       .contact-grid { grid-template-columns: 1fr; }
+
       nav { padding: 0 0.5rem; }
-      .nav-links a { padding: 0 10px; font-size: 13px; }
+
+      .nav-name { font-size: 22px; }
+
+      .nav-links a {
+        padding: 0 10px;
+        font-size: 13px;
+      }
+
       .site-wrap { padding: 0 0.75rem 4rem; }
+
       .page { padding-top: 2.5rem; }
-      #page-research, #page-teaching, #page-cv, #page-contact { padding-top: 1.5rem; }
-      .bio-heading, h1.page-title { font-size: 32px; }
+
+      #page-research,
+      #page-teaching,
+      #page-cv,
+      #page-contact {
+        padding-top: 1.5rem;
+      }
+
+      .bio-heading,
+      h1.page-title {
+        font-size: 32px;
+      }
+
       .cv-embed { height: 60vh; }
     }
   </style>
@@ -295,28 +663,47 @@
         <p class="profile-name">Cyrus Khalvati</p>
         <p class="profile-role">Ph.D. Candidate in Management</p>
         <p class="profile-uni">University of Missouri</p>
+
         <div class="social-row">
           <a class="social-icon linkedin" href="#" title="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
           </a>
+
           <a class="social-icon scholar" href="https://scholar.google.com/citations?user=-6ebuSEAAAAJ&hl=en" title="Google Scholar">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18V17c0 .88.39 1.67 1 2.22L12 22l6-2.78c.61-.55 1-1.34 1-2.22v-5.82L21 9l-9-6zM18 9l-6 3.27L6 9l6-3.27L18 9zM7 14.45v-3.27l5 2.73 5-2.73v3.27L12 17.27l-5-2.82z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3L1 9l4 2.18V17c0 .88.39 1.67 1 2.22L12 22l6-2.78c.61-.55 1-1.34 1-2.22v-5.82L21 9l-9-6zM18 9l-6 3.27L6 9l6-3.27L18 9zM7 14.45v-3.27l5 2.73 5-2.73v3.27L12 17.27l-5-2.82z"/>
+            </svg>
           </a>
+
           <a class="social-icon email" href="mailto:cyruskhalvati@missouri.edu" title="Email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
           </a>
+
           <a class="social-icon orcid" href="https://orcid.org/0009-0009-5330-5573" title="ORCID">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm-1-9.5c-.69 0-1.25-.56-1.25-1.25S9.31 4 10 4s1.25.56 1.25 1.25S10.69 6.5 10 6.5zM17 16h-2v-4c0-1.1-.9-2-2-2s-2 .9-2 2v4h-2V8h2v1.08C11.58 8.4 12.25 8 13 8c1.66 0 3 1.34 3 3v5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm-1-9.5c-.69 0-1.25-.56-1.25-1.25S9.31 4 10 4s1.25.56 1.25 1.25S10.69 6.5 10 6.5zM17 16h-2v-4c0-1.1-.9-2-2-2s-2 .9-2 2v4h-2V8h2v1.08C11.58 8.4 12.25 8 13 8c1.66 0 3 1.34 3 3v5z"/>
+            </svg>
           </a>
         </div>
       </div>
 
       <div>
         <h1 class="bio-heading">Biography</h1>
+
         <p class="bio-text">Hi! My name is Cyrus, I am a Ph.D. candidate in Management at the <a href="https://business.missouri.edu/">Trulaske College of Business</a> at the <a href="https://missouri.edu/">University of Missouri</a>.</p>
-        <p class="bio-text">My research examines how the design and bundling of human resource practices shape employee and firm performance. My work has been invited for revision at the <em><strong>Journal of Applied Psychology</strong></em> and <em><strong>Personnel Psychology</strong></em>.</p>
+
+        <p class="bio-text">My research examines how organizations adapt their HR systems and human capital decisions to changing external and internal conditions, and how those choices shape outcomes for both firms and employees. My work has been invited for revision at the <em><strong>Journal of Applied Psychology</strong></em> and <em><strong>Personnel Psychology</strong></em>.</p>
+
         <p class="bio-text">I completed my undergraduate studies in <a href="https://www.cntraveller.com/gallery/vancouver-canada-best-things-to-do">Vancouver, Canada</a>, where I was born and raised. As a Canadian, I am <strong>eligible for TN status</strong> for employment in the U.S. and <strong>do not require H1-B sponsorship</strong>.</p>
+
         <p class="bio-text">Outside of research and teaching, I enjoy playing basketball and spending time with family. I am also highly engaged with the professional Esports scene.</p>
+
         <p class="cv-inline-link">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -325,6 +712,7 @@
           </svg>
           Download my <a href="CV - Cyrus Khalvati.pdf">CV</a>
         </p>
+
         <div class="interests-edu-grid">
           <div>
             <p class="sub-section-title">Interests</p>
@@ -335,6 +723,7 @@
               <li>Performance Management</li>
             </ul>
           </div>
+
           <div>
             <p class="sub-section-title">Education</p>
             <ul class="edu-list">
@@ -379,15 +768,16 @@
             <li>With <a href="https://business.missouri.edu/directory/kim-1">Joonyoung Kim</a></li>
             <li>Under 3rd round review at <strong>Journal of Applied Psychology</strong></li>
           </ul>
-          <p class="paper-abstract">We study how work-hour restrictions affect firm productivity using panel data of 514 firm-year observations from 251 firms under Korea's 52-hour policy. Firms experience productivity declines after the policy, driven by disrupted effort–performance expectations when duration-based work is constrained. Firms subject to the policy show negative average productivity effects in the initial period. Due to limited working time, employees must shift from duration-based to intensity-based effort. Firms with stronger performance-based pay show weaker productivity losses because incentives strengthen performance–reward linkages and motivate this adjustment.</p>
+          <p class="paper-abstract">We examine how firms adapt their compensation systems when a regulatory policy restricts working hours, using panel data of 514 firm-year observations from 251 firms under South Korea's 52-hour workweek policy. Work-hour restrictions reduce labor productivity because firms can no longer rely on longer hours to sustain output. Firms whose compensation systems place greater weight on performance-based pay experience smaller productivity losses, because incentives encourage employees to work more intensively once hours are capped. These effects are stronger when firms also provide favorable levels of base pay, which reduces the financial risk employees face when pursuing uncertain incentives.</p>
         </li>
+
         <li>
           <span class="paper-title">"Shared Adversity, Greater Effort: How Hyperinflation Alters the Meaning and Motivational Influence of Economic Hardship"</span>
           <ul class="paper-sub">
             <li>With <a href="https://business.missouri.edu/directory/schaubroeck">John Schaubroeck</a>, <a href="https://business.missouri.edu/directory/peng">Ann Peng</a>, &amp; <a href="https://avesis.kayseri.edu.tr/ozgurdemirtas">Ozgur Demirtas</a></li>
             <li>Under 3rd round review at <strong>Personnel Psychology</strong></li>
           </ul>
-          <p class="paper-abstract">We study how economic hardship affects employee work effort using a field sample of 409 healthcare employees in Türkiye during a period of extreme inflation (~85%) and two experiments. Employees typically reduce effort under hardship, driven by cognitive strain and self-focused concerns, but maintain effort when hardship is widely shared during hyperinflation. Workers experiencing worsening hardship show no decline in effort in the field and weaker negative effects in experiments under hyperinflation. Due to shared economic conditions, individuals shift toward a salient social identity that emphasizes role obligations. This sustains work effort and links to higher job performance among those high in perspective taking.</p>
+          <p class="paper-abstract">We examine how organizations manage and retain talent during economic crisis, using a field sample of 409 healthcare employees in Türkiye during a period of roughly 85% inflation and two experiments. Economic hardship does not uniformly diminish effort. Employees tend to sustain effort when hardship is widely shared, because shared adversity activates a social identity that makes work-role obligations more salient. These processes help explain why workers experiencing worsening hardship show no decline in effort in the field and weaker negative effects in the experiments under hyperinflation, with stronger performance benefits among employees high in perspective taking.</p>
         </li>
       </ol>
 
@@ -399,31 +789,34 @@
             <li>With <a href="https://business.missouri.edu/directory/arnold">John Arnold</a>, <a href="https://business.missouri.edu/directory/kim-1">Joonyoung Kim</a>, &amp; <a href="https://www.pdx.edu/profile/talya-bauer">Talya Bauer</a></li>
             <li>Preparing to submit: <strong>Journal of Applied Psychology</strong></li>
           </ul>
-          <p class="paper-abstract">We study how hiring context (expansion vs. replacement) affects new hire quality and turnover using archival data from 8,198 call center employees at a U.S. telecommunications firm (2018–2020). Expansion hires score higher on selection assessments, indicating better average applicant quality, while replacement hires show lower scores across performance-related constructs. Replacement hires also exhibit higher turnover risk (about 17% higher hazard), and overall turnover in the sample is high (50.7%). Due to differences in hiring context, replacement roles appear harder to fill with high-quality candidates, contributing to worse outcomes.</p>
+          <p class="paper-abstract">We examine whether the reason for hiring matters for the quality and performance of new hires. Using archival data from 8,198 call center employees at a U.S. telecommunications firm from 2018–2020, we compare expansion hiring with replacement hiring and find that expansion hires score higher on selection assessments, while replacement hires score lower across performance-related constructs. Replacement hires are also about 17% more likely to turn over, and overall turnover in the sample is high at 50.7%. These findings suggest that hiring outcomes depend not only on applicant characteristics but also on the conditions that create the vacancy.</p>
         </li>
+
         <li>
-          <span class="paper-title">"What Does Behavioral Consistency Really Mean? A Meta-analysis of Method Factors and Outcomes in Employee Selection"</span>
+          <span class="paper-title">"What Does Behavioral Consistency Really Mean? A Meta-Analysis of Method Factors and Outcomes in Employee Selection"</span>
           <ul class="paper-sub">
             <li>With <a href="https://business.missouri.edu/directory/arnold">John Arnold</a>, <a href="https://tippie.uiowa.edu/people/chad-vaniddekinge">Chad Van Iddekinge</a>, &amp; <a href="https://faculty.smu.edu.sg/profile/lievens-filip-1871">Filip Lievens</a></li>
-            <li>Target: <strong>Journal of Applied Psychology</strong></li>
+            <li>Writing: <strong>Journal of Applied Psychology</strong></li>
           </ul>
-          <p class="paper-abstract">We study behavioral consistency in employee selection, conducting a meta-analysis of 67 studies (78 samples; N = 26,377) covering procedures like assessment centers, work samples, and behavioral interviews. These methods are assumed to predict performance because past or simulated behavior reflects future job behavior, but theory used to develop these predictions are inconsistently applied. Across studies, behavioral consistency procedures show moderate predictive validity (≈ .35), with substantial variation across implementations. Procedures with higher construct consistency show stronger validity (≈ .42 vs .25 when low), indicating that how consistency is implemented matters for prediction.</p>
+          <p class="paper-abstract">We examine how organizations operationalize behavioral consistency in selection procedures and how those differences affect predictive validity. In a meta-analysis of 67 studies, 78 samples, and N = 26,377, we study assessment centers, work samples, behavioral interviews, and related procedures that rely on the assumption that past or simulated behavior predicts future job behavior. Behavioral consistency procedures show moderate predictive validity overall (≈ .35), but validity is stronger when the behavior assessed by the procedure closely resembles the on-the-job behavior it is meant to predict (≈ .42 vs. .25 when low). These findings show that how behavioral consistency is implemented matters for improving selection.</p>
         </li>
+
         <li>
-          <span class="paper-title">"Managing Pay Dispersion in Flatter Organizational Hierarchies"</span>
+          <span class="paper-title">"Productivity Consequences of Pay Dispersion in Flat Organizations"</span>
           <ul class="paper-sub">
             <li>With <a href="https://business.missouri.edu/directory/kim-1">Joonyoung Kim</a></li>
-            <li>Target: <strong>Journal of Applied Psychology</strong></li>
+            <li>Writing: <strong>Journal of Applied Psychology</strong></li>
           </ul>
-          <p class="paper-abstract">We study how flattening organizational hierarchy shapes the effects of vertical and horizontal pay dispersion on firm-level labor productivity using a quasi-experimental firm setting. Firms that flatten hierarchy weaken the productivity benefits of vertical pay dispersion, driven by the loss of clear promotion ladders that make tournament incentives meaningful. At the same time, flattening strengthens the positive association between horizontal pay dispersion and firm productivity because pay differences become more visible and trigger sorting, where lower-paid (and lower-performing) employees exit.</p>
+          <p class="paper-abstract">We examine how flattening organizational hierarchy changes the productivity effects of vertical and horizontal pay dispersion. Using a quasi-experimental firm setting, we find that flatter structures weaken the productivity benefits of vertical pay dispersion because promotion ladders become less defined and tournament incentives lose motivational force. By contrast, flatter structures strengthen the effects of horizontal pay dispersion because pay differences incentivize effort and prompt sorting, through which lower-performing employees exit. These findings suggest that as firms adopt flatter forms, they must adapt how pay is structured to fit new organizational designs and avoid unintended productivity consequences.</p>
         </li>
+
         <li>
-          <span class="paper-title">"A Theoretical Investigation of Performance Improvement Plans"</span>
+          <span class="paper-title">"Designed to Fail? Why Employees Disengage from Performance Improvement Plans"</span>
           <ul class="paper-sub">
             <li>With <a href="https://business.missouri.edu/directory/schaubroeck">John Schaubroeck</a></li>
-            <li>Target: <strong>Personnel Psychology</strong></li>
+            <li>Ideation: <strong>Personnel Psychology</strong></li>
           </ul>
-          <p class="paper-abstract">We study how employees interpret and respond to Performance Improvement Plans (PIPs), focusing on how social context shapes their meaning and attribution in organizations. We offer that employees form expectations about whether improvement is possible and whether termination is likely, based on cues from peers and supervisors. Peer information signals whether others improve or are terminated, while supervisor framing shapes how those signals are interpreted. When employees expect improvement to be attainable, they engage more with work, whereas expectations of inevitable termination lead to withdrawal behaviors like turnover intentions and job search.</p>
+          <p class="paper-abstract">We examine how employees interpret and respond to Performance Improvement Plans (PIPs), a widely used tool for addressing underperformance that often produces inconsistent outcomes. We argue that PIP effectiveness depends less on formal structure and more on whether employees view the plan as a genuine opportunity to improve or as a process effectively designed to fail. This interpretation is shaped by how clearly the plan defines improvement, whether its objectives are realistic and attainable, and what managers signal about the likelihood of termination. Employees who believe they can improve enough to keep their position invest effort in completing the PIP, whereas those who view termination as inevitable redirect effort toward withdrawal behaviors such as job search.</p>
         </li>
       </ol>
     </div>
@@ -433,7 +826,9 @@
   <section id="page-teaching" class="page">
     <div class="inner-wrap">
       <h1 class="page-title">Teaching</h1>
+
       <p class="teach-intro">Teaching is an incredibly important part of my scholarly identity. It is an opportunity for me to connect with bright, ambitious students and share meaningful knowledge that not only prepares them professionally, but also helps them grow as thoughtful and capable individuals in their personal lives.</p>
+
       <p class="teach-section-title">Instructor</p>
       <ul class="teach-list">
         <li>
@@ -453,6 +848,7 @@
           <span class="teach-sub"><a href="Fall 2024 Evaluations - Cyrus Khalvati.pdf">View Evaluations for Fall 2024</a></span>
         </li>
       </ul>
+
       <p class="teach-section-title">Student Comments</p>
       <ul class="quote-list">
         <li>"Cyrus is an amazing educator. The course content is extremely interesting... and Cyrus does an amazing job at showing the students how the content is applicable to daily life and work."</li>
@@ -484,17 +880,51 @@
   <section id="page-contact" class="page">
     <div class="inner-wrap">
       <h1 class="page-title">Contact</h1>
+
       <div class="contact-grid">
-        <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:cyruskhalvati@missouri.edu">cyruskhalvati@missouri.edu</a></div></div>
-        <div><div class="contact-label">Office</div><div class="contact-val">509 Cornell Hall<br>Trulaske College of Business<br>Columbia, MO 65211</div></div>
-        <div><div class="contact-label">Mailing Address</div><div class="contact-val">Department of Management<br>University of Missouri<br>Columbia, MO 65211</div></div>
-        <div><div class="contact-label">Links</div><div class="contact-val"><a href="#">LinkedIn</a><br><a href="https://scholar.google.com/citations?user=-6ebuSEAAAAJ&hl=en">Google Scholar</a><br><a href="https://orcid.org/0009-0009-5330-5573">ORCID</a></div></div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-val"><a href="mailto:cyruskhalvati@missouri.edu">cyruskhalvati@missouri.edu</a></div>
+        </div>
+
+        <div>
+          <div class="contact-label">Office</div>
+          <div class="contact-val">509 Cornell Hall<br>Trulaske College of Business<br>Columbia, MO 65211</div>
+        </div>
+
+        <div>
+          <div class="contact-label">Mailing Address</div>
+          <div class="contact-val">Department of Management<br>University of Missouri<br>Columbia, MO 65211</div>
+        </div>
+
+        <div>
+          <div class="contact-label">Links</div>
+          <div class="contact-val">
+            <a href="#">LinkedIn</a><br>
+            <a href="https://scholar.google.com/citations?user=-6ebuSEAAAAJ&hl=en">Google Scholar</a><br>
+            <a href="https://orcid.org/0009-0009-5330-5573">ORCID</a>
+          </div>
+        </div>
       </div>
+
       <p class="form-title">Send a Message</p>
+
       <form id="contact-form" onsubmit="return sendMessage(event);">
-        <div class="form-row"><label>Name</label><input type="text" id="msg-name" placeholder="Your name" required /></div>
-        <div class="form-row"><label>Email</label><input type="email" id="msg-email" placeholder="your@email.com" required /></div>
-        <div class="form-row"><label>Message</label><textarea id="msg-body" placeholder="Your message..." required></textarea></div>
+        <div class="form-row">
+          <label>Name</label>
+          <input type="text" id="msg-name" placeholder="Your name" required />
+        </div>
+
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" id="msg-email" placeholder="your@email.com" required />
+        </div>
+
+        <div class="form-row">
+          <label>Message</label>
+          <textarea id="msg-body" placeholder="Your message..." required></textarea>
+        </div>
+
         <button class="form-submit" type="submit">Send</button>
         <p class="form-note">Clicking Send will open your email app with the message pre-filled, addressed to me.</p>
       </form>
@@ -525,16 +955,20 @@
 
   function sendMessage(event) {
     event.preventDefault();
+
     const name = document.getElementById('msg-name').value;
     const email = document.getElementById('msg-email').value;
     const body = document.getElementById('msg-body').value;
+
     const subject = encodeURIComponent('Website message from ' + name);
     const emailBody = encodeURIComponent(
       'From: ' + name + ' (' + email + ')\n\n' + body
     );
+
     window.location.href = 'mailto:cyruskhalvati@missouri.edu?subject=' + subject + '&body=' + emailBody;
     return false;
   }
 </script>
+
 </body>
 </html>
